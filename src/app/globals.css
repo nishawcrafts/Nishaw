@@ -1,26 +1,441 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   NISHAW DESIGN SYSTEM — globals.css
+   Tailwind v4 CSS-first configuration
+   "Say more than thank you." · "Reserved for the remarkable."
+   ──────────────────────────────────────────────────────────────────────── */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500;1,9..144,600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400;1,6..72,500&family=Tangerine:wght@400;700&display=swap');
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+/* ── Tailwind v4 theme ───────────────────────────────────────────────────── */
+@theme {
+  /* Colours */
+  --color-paper:        #F7F1E1;
+  --color-paper-deep:   #EFE7D2;
+  --color-ink:          #3A2E28;
+  --color-ink-soft:     #6B5A4E;
+  --color-ink-faint:    rgba(58,46,40,0.08);
+  --color-ink-muted:    rgba(58,46,40,0.35);
+
+  --color-terracotta:   #A8443A;
+  --color-pine:         #2F5D50;
+  --color-sapphire:     #2E4A6B;
+  --color-plum:         #6E3B52;
+  --color-gold:         #B8934A;
+  --color-gold-soft:    #D9C48F;
+  --color-gold-faint:   rgba(184,147,74,0.15);
+
+  /* Typography */
+  --font-heading:  "Fraunces", Georgia, serif;
+  --font-body:     "Newsreader", Georgia, serif;
+  --font-script:   "Tangerine", cursive;
+
+  /* Fluid type scale */
+  --text-display:  clamp(3rem,   6.5vw, 5.5rem);
+  --text-h1:       clamp(2.25rem,4.5vw, 4rem);
+  --text-h2:       clamp(1.75rem,3.2vw, 2.75rem);
+  --text-h3:       clamp(1.35rem,2.4vw, 1.875rem);
+  --text-h4:       clamp(1.1rem,  2vw,  1.375rem);
+  --text-body-lg:  1.25rem;
+  --text-body:     1.0625rem;
+  --text-body-sm:  0.9375rem;
+  --text-eyebrow:  0.6875rem;
+  --text-script:   clamp(2.5rem,  6vw,  4.5rem);
+
+  /* Layout */
+  --max-width:     1200px;
+  --section-py:    clamp(72px, 10vw, 120px);
+  --gutter:        clamp(20px, 5vw, 48px);
+  --radius-card:   16px;
+  --radius-sm:     8px;
+  --radius-pill:   9999px;
+
+  /* Motion — these are the ONLY timings used sitewide */
+  --ease-out:      cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast:      120ms;   /* button press */
+  --dur-link:      200ms;   /* underline draw, card lift */
+  --dur-reveal:    500ms;   /* fade+rise */
+  --dur-bar:       250ms;   /* mobile bar slide-up */
+
+  /* Shadows */
+  --shadow-card:       0 2px 16px rgba(58,46,40,0.07), 0 1px 4px rgba(58,46,40,0.04);
+  --shadow-card-hover: 0 8px 32px rgba(58,46,40,0.13), 0 2px 8px rgba(58,46,40,0.07);
+  --shadow-header:     0 1px 0 var(--color-gold-soft);
+  --shadow-bar:        0 -2px 16px rgba(58,46,40,0.10);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* ─────────────────────────────────────────────────────────────────────────
+   BASE RESET
+   ──────────────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  hanging-punctuation: first last;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: 1.72;
+  min-height: 100dvh;
+  /* ~4% paper-grain texture */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='320' height='320' filter='url(%23g)' opacity='0.038'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+img, video { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; border: none; background: none; }
+
+/* ─────────────────────────────────────────────────────────────────────────
+   TYPOGRAPHY
+   ──────────────────────────────────────────────────────────────────────── */
+h1,h2,h3,h4,h5 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.022em;
+  color: var(--color-ink);
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--text-eyebrow);
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.tagline {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: 300;
+}
+
+/* Tangerine script — ONLY for logo wordmark and closing note */
+.script {
+  font-family: var(--font-script);
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   LAYOUT
+   ──────────────────────────────────────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section-py {
+  padding-block: var(--section-py);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   HAIRLINES & DIVIDERS
+   ──────────────────────────────────────────────────────────────────────── */
+.hairline        { border: none; border-top: 1px solid var(--color-gold-soft); }
+.hairline-dashed { border: none; border-top: 1px dashed var(--color-gold-soft); }
+
+.diamond-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: var(--color-gold);
+  font-size: 0.875rem;
+}
+.diamond-divider::before,
+.diamond-divider::after {
+  content: "";
+  flex: 1;
+  border-top: 1px solid var(--color-gold-soft);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   LINK UNDERLINE DRAW  (animation 2 — gold hairline, 200ms)
+   ──────────────────────────────────────────────────────────────────────── */
+.link-draw {
+  position: relative;
+  display: inline-block;
+}
+.link-draw::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-gold);
+  transition: width var(--dur-link) var(--ease-out);
+}
+.link-draw:hover::after,
+.link-draw:focus-visible::after { width: 100%; }
+
+/* ─────────────────────────────────────────────────────────────────────────
+   BUTTONS  (animation 6 — press scale 0.98, 120ms)
+   ──────────────────────────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  padding: 13px 28px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  white-space: nowrap;
+  user-select: none;
+  transition:
+    background var(--dur-link) var(--ease-out),
+    border-color var(--dur-link) var(--ease-out),
+    color var(--dur-link) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur-link) var(--ease-out);
+}
+.btn:active { transform: scale(0.98); }
+.btn:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+/* Primary gold */
+.btn-gold {
+  background: var(--color-gold);
+  color: var(--color-paper);
+  border-color: var(--color-gold);
+}
+.btn-gold:hover {
+  background: #a07a3a;
+  border-color: #a07a3a;
+}
+
+/* Ghost — ink outline */
+.btn-ghost {
+  background: transparent;
+  color: var(--color-ink);
+  border-color: var(--color-ink);
+}
+.btn-ghost:hover {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+/* Ghost gold — gold outline */
+.btn-ghost-gold {
+  background: transparent;
+  color: var(--color-gold);
+  border-color: var(--color-gold);
+}
+.btn-ghost-gold:hover {
+  background: var(--color-gold-faint);
+}
+
+/* Size modifiers */
+.btn-sm { padding: 9px 20px; font-size: 0.8125rem; }
+.btn-lg { padding: 16px 40px; font-size: var(--text-body); }
+
+/* ─────────────────────────────────────────────────────────────────────────
+   CARDS  (animation 3 — lift -4px + shadow bloom, 200ms)
+   ──────────────────────────────────────────────────────────────────────── */
+.card {
+  background: rgba(255,249,237,0.9);
+  border: 1px solid var(--color-gold-soft);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  transition:
+    transform var(--dur-link) var(--ease-out),
+    box-shadow var(--dur-link) var(--ease-out);
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.card-dashed {
+  background: transparent;
+  border: 1px dashed var(--color-gold-soft);
+  border-radius: var(--radius-card);
+}
+
+/* Accent band card — top border in collection accent colour */
+.card-accent {
+  background: rgba(255,249,237,0.9);
+  border: 1px solid var(--color-gold-soft);
+  border-top-width: 3px;
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  transition:
+    transform var(--dur-link) var(--ease-out),
+    box-shadow var(--dur-link) var(--ease-out);
+}
+.card-accent:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   SCROLL-REVEAL  (animation 1 — fade+rise 16px, 500ms, once)
+   ──────────────────────────────────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity var(--dur-reveal) var(--ease-out),
+    transform var(--dur-reveal) var(--ease-out);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   HEADER
+   ──────────────────────────────────────────────────────────────────────── */
+.header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 50;
+  transition:
+    background var(--dur-link) var(--ease-out),
+    box-shadow var(--dur-link) var(--ease-out);
+}
+.header-transparent { background: transparent; box-shadow: none; }
+.header-solid {
+  background: var(--color-paper);
+  box-shadow: var(--shadow-header);
+}
+
+/* Mobile slide-in drawer */
+.nav-drawer {
+  position: fixed;
+  inset: 0 0 0 auto;
+  width: min(340px, 90vw);
+  background: var(--color-paper);
+  box-shadow: -4px 0 32px rgba(58,46,40,0.12);
+  transform: translateX(100%);
+  transition: transform var(--dur-reveal) var(--ease-out);
+  z-index: 60;
+  overflow-y: auto;
+  padding: 80px var(--gutter) var(--gutter);
+}
+.nav-drawer.is-open { transform: translateX(0); }
+
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(58,46,40,0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--dur-link) var(--ease-out);
+  z-index: 59;
+}
+.nav-overlay.is-open { opacity: 1; pointer-events: auto; }
+
+/* ─────────────────────────────────────────────────────────────────────────
+   MOBILE ACTION BAR  (animation 9 — slide-up 250ms)
+   ──────────────────────────────────────────────────────────────────────── */
+.mobile-bar {
+  position: fixed;
+  inset: auto 0 0 0;
+  z-index: 55;
+  display: flex;
+  align-items: stretch;
+  box-shadow: var(--shadow-bar);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  transform: translateY(100%);
+  transition: transform var(--dur-bar) var(--ease-out);
+}
+.mobile-bar.is-visible { transform: translateY(0); }
+
+@media (min-width: 768px) {
+  .mobile-bar { display: none !important; }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   BADGE
+   ──────────────────────────────────────────────────────────────────────── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 4px 11px;
+  border-radius: var(--radius-pill);
+  border: 1px solid currentColor;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   PREFERS-REDUCED-MOTION  — kill ALL transitions / animations
+   ──────────────────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal { opacity: 1 !important; transform: none !important; }
+  .mobile-bar { transform: translateY(0) !important; }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   FOCUS
+   ──────────────────────────────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   HOME PAGE — RESPONSIVE OVERRIDES
+   ──────────────────────────────────────────────────────────────────────── */
+
+/* Hero: on mobile switch gradient to full overlay for text readability */
+@media (max-width: 767px) {
+  /* Stronger overlay on mobile hero */
+  .hero-overlay-mobile {
+    background: linear-gradient(
+      to bottom,
+      rgba(247,241,225,0.96) 0%,
+      rgba(247,241,225,0.90) 60%,
+      rgba(247,241,225,0.75) 100%
+    ) !important;
+  }
+
+  /* Trust strip: stack items on very small screens */
+  .trust-divider { display: none; }
+}
+
+/* Collections grid: ensure 1-col at 375px */
+@media (max-width: 480px) {
+  .collections-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   CLOSING BAND SCRIPT
+   ──────────────────────────────────────────────────────────────────────── */
+.script-closing {
+  font-family: var(--font-script);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  color: var(--color-gold);
+  line-height: 1;
+  display: block;
 }
