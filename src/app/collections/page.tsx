@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { collections } from "@/content/collections";
 import { accentValues } from "@/lib/tokens";
@@ -8,9 +8,9 @@ import { Divider }      from "@/components/ui/Divider";
 import { Button }       from "@/components/ui/Button";
 
 export const metadata: Metadata = {
-  title: "The Collections — Nine Ways to Be Remembered",
+  title: "The Collections, Nine Ways to Be Remembered",
   description:
-    "Nine curated collections of premium corporate gifts for every occasion — onboarding, Diwali, client appreciation, milestones, farewell, events, and fully bespoke. Pan-India delivery. GST invoicing.",
+    "Nine curated collections of premium corporate gifts for every occasion, onboarding, Diwali, client appreciation, milestones, farewell, events, and fully bespoke. Pan-India delivery. GST invoicing.",
   openGraph: {
     title: "The Collections | Nishaw",
     description:
@@ -107,7 +107,7 @@ export default function CollectionsPage() {
               }}
             >
               Every gifting occasion calls for something different. Browse by moment
-              — and find the collection that speaks to yours.
+             , and find the collection that speaks to yours.
             </p>
           </ScrollReveal>
         </div>
@@ -130,7 +130,7 @@ export default function CollectionsPage() {
                   <Link
                     href={`/collections/${col.slug}`}
                     style={{ display: "block", height: "100%", textDecoration: "none" }}
-                    aria-label={`${col.displayName} — ${col.seoH1}`}
+                    aria-label={`${col.displayName}, ${col.seoH1}`}
                   >
                     <article
                       className="card-accent card-hover"

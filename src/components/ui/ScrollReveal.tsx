@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useEffect, useRef, useState } from "react";
 
@@ -10,7 +10,7 @@ interface ScrollRevealProps {
 }
 
 /**
- * ScrollReveal — animation 1 per spec:
+ * ScrollReveal, animation 1 per spec:
  * fade + rise 16px, 500ms ease-out, IntersectionObserver, fires once.
  * Respects prefers-reduced-motion via global CSS (transition-duration → 0.01ms).
  */

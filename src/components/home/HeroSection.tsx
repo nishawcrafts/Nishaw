@@ -5,8 +5,8 @@ import Link from "next/link";
 
 /* ─────────────────────────────────────────────────────────────────────────
    HeroSection
-   Animation 4 — subtle parallax ≤8% on scroll (home hero only)
-   Animation 5 — split-text word reveal on H1 (30ms stagger)
+   Animation 4, subtle parallax ≤8% on scroll (home hero only)
+   Animation 5, split-text word reveal on H1 (30ms stagger)
    ──────────────────────────────────────────────────────────────────────── */
 
 const H1_TEXT = "Say more than thank you.";
@@ -81,7 +81,7 @@ export function HeroSection() {
   return (
     <section
       ref={heroRef}
-      aria-label="Hero — Bespoke Corporate Gifting"
+      aria-label="Hero, Bespoke Corporate Gifting"
       style={{
         position: "relative",
         minHeight: "100dvh",
@@ -115,7 +115,7 @@ export function HeroSection() {
             display: "block",
           }}
         />
-        {/* Gradient overlay — cream from left, transparent right */}
+        {/* Gradient overlay, cream from left, transparent right */}
         <div
           style={{
             position: "absolute",
@@ -163,7 +163,7 @@ export function HeroSection() {
             Bespoke Corporate Gifting
           </p>
 
-          {/* H1 — Split-text word reveal */}
+          {/* H1, Split-text word reveal */}
           <h1
             ref={h1Ref}
             style={{
@@ -215,7 +215,7 @@ export function HeroSection() {
             }}
           >
             Curated and custom-made gifts for the people who move your business
-            forward — clients, teams, and the ones you can&apos;t afford to
+            forward: clients, teams, and the ones you can&apos;t afford to
             forget.
           </p>
 

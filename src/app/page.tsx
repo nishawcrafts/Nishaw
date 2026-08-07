@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { HeroSection }  from "@/components/home/HeroSection";
 import { GoldSeal }     from "@/components/home/GoldSeal";
@@ -9,15 +9,15 @@ import { Button }       from "@/components/ui/Button";
 import { accentValues } from "@/lib/tokens";
 
 export const metadata: Metadata = {
-  title: "Nishaw — Premium & Bespoke Corporate Gifting India",
+  title: "Nishaw, Premium & Bespoke Corporate Gifting India",
   description:
     "Say more than thank you. Curated and custom-made corporate gifts for clients, teams and enterprises across India. 500+ gifts delivered. Pan-India logistics. GST invoicing.",
   openGraph: {
-    title: "Nishaw — Premium & Bespoke Corporate Gifting",
+    title: "Nishaw, Premium & Bespoke Corporate Gifting",
     description:
       "Say more than thank you. Reserved for the remarkable. Luxury corporate gifting, done beautifully.",
     url: "https://nishaw.com",
-    images: [{ url: "/images/hero.jpg", width: 1920, height: 1080, alt: "Nishaw — a gift tied with gold silk ribbon" }],
+    images: [{ url: "/images/hero.jpg", width: 1920, height: 1080, alt: "Nishaw, a gift tied with gold silk ribbon" }],
   },
 };
 
@@ -63,19 +63,19 @@ const caseStudies = [
   {
     eyebrow: "Fintech · 500 kits",
     title:   "Welcome kits for a unicorn's pan-India rollout",
-    body:    "Premium leather journals, brass pens, and artisan snack boxes — personalised with each hire's name and city — delivered in a single week across 18 cities.",
+    body:    "Premium leather journals, brass pens, and artisan snack boxes, personalised with each hire's name and city, delivered in a single week across 18 cities.",
     accent:  "pine" as const,
   },
   {
     eyebrow: "Private Banking · Diwali",
     title:   "Festive hampers for 200 senior clients",
-    body:    "A curated selection of fine dry fruits, premium sweets, and a hand-painted ceramic diya — all branded with a gold-foil monogram. Zero negative feedback. Several replies.",
+    body:    "A curated selection of fine dry fruits, premium sweets, and a hand-painted ceramic diya, all branded with a gold-foil monogram. Zero negative feedback. Several replies.",
     accent:  "terracotta" as const,
   },
   {
     eyebrow: "SaaS Startup · Farewell",
     title:   "Exit gifts for a founding team of twelve",
-    body:    "Each box told a chapter of their journey — a custom illustrated card, a personalised keepsake, and a message from the CEO. Not one person left without a lump in their throat.",
+    body:    "Each box told a chapter of their journey, a custom illustrated card, a personalised keepsake, and a message from the CEO. Not one person left without a lump in their throat.",
     accent:  "plum" as const,
   },
 ];
@@ -337,8 +337,8 @@ export default function HomePage() {
                   }}
                 >
                   Some gifts need to be entirely their own. We start from a blank
-                  page — your brand, their personality, the moment you want to
-                  mark — and build something that could only exist for this person,
+                  page, your brand, their personality, the moment you want to
+                  mark, and build something that could only exist for this person,
                   from you.
                 </p>
               </ScrollReveal>
@@ -586,7 +586,7 @@ export default function HomePage() {
                   }}
                 >
                   Nishaw understood what we needed before we could articulate
-                  it ourselves. The gifts arrived perfectly — and so did the
+                  it ourselves. The gifts arrived perfectly, and so did the
                   feeling.
                 </p>
                 <footer
@@ -597,7 +597,7 @@ export default function HomePage() {
                     letterSpacing: "0.04em",
                   }}
                 >
-                  — Priya S.,&nbsp;
+                 , Priya S.,&nbsp;
                   <cite style={{ fontStyle: "italic" }}>
                     Chief People Officer
                   </cite>

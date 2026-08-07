@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import {
   Button,
@@ -14,7 +14,7 @@ import { colors, accentValues, type AccentColor } from "@/lib/tokens";
 export const metadata: Metadata = {
   title: "Styleguide",
   description:
-    "Nishaw design system — colours, typography, motion, and components.",
+    "Nishaw design system, colours, typography, motion, and components.",
   robots: { index: false, follow: false },
 };
 
@@ -110,7 +110,7 @@ function TokenRow({
         {value}
         {note && (
           <em style={{ marginLeft: 10, color: "var(--color-gold)", fontStyle: "italic" }}>
-            — {note}
+           , {note}
           </em>
         )}
       </span>
@@ -210,7 +210,7 @@ export default function StyleguidePage() {
       {/* ══════════════════════════════════════════════════════════════════
            01 COLOURS
          ══════════════════════════════════════════════════════════════════ */}
-      <Section id="colours" eyebrow="01 — Foundation" heading="Colour Palette">
+      <Section id="colours" eyebrow="01, Foundation" heading="Colour Palette">
         <div
           style={{
             display: "grid",
@@ -239,7 +239,7 @@ export default function StyleguidePage() {
           >
             Jewel tones (terracotta, pine, sapphire, plum) are used{" "}
             <strong>one per collection card</strong> as a top accent band.
-            Gold is used for interactive chrome — hairlines, underlines, the
+            Gold is used for interactive chrome, hairlines, underlines, the
             wordmark, and primary buttons. Never use jewel tones as
             full-bleed backgrounds on desktop; they appear as subtle signals
             only.
@@ -252,7 +252,7 @@ export default function StyleguidePage() {
       {/* ══════════════════════════════════════════════════════════════════
            02 TYPOGRAPHY
          ══════════════════════════════════════════════════════════════════ */}
-      <Section id="typography" eyebrow="02 — Typography" heading="Type System">
+      <Section id="typography" eyebrow="02, Typography" heading="Type System">
 
         {/* Font trio */}
         <div
@@ -265,7 +265,7 @@ export default function StyleguidePage() {
         >
           {/* Fraunces */}
           <Card padding="lg">
-            <Eyebrow style={{ marginBottom: 14 }}>Headings — Fraunces</Eyebrow>
+            <Eyebrow style={{ marginBottom: 14 }}>Headings, Fraunces</Eyebrow>
             <p
               style={{
                 fontFamily: "var(--font-heading)",
@@ -293,7 +293,7 @@ export default function StyleguidePage() {
 
           {/* Newsreader */}
           <Card padding="lg">
-            <Eyebrow style={{ marginBottom: 14 }}>Body — Newsreader</Eyebrow>
+            <Eyebrow style={{ marginBottom: 14 }}>Body, Newsreader</Eyebrow>
             <p
               style={{
                 fontFamily: "var(--font-body)",
@@ -301,7 +301,7 @@ export default function StyleguidePage() {
                 lineHeight: 1.72,
               }}
             >
-              Every gift we make carries a story — of care, of intention, of
+              Every gift we make carries a story, of care, of intention, of
               knowing the person who receives it deserves something made
               precisely for them.
             </p>
@@ -321,7 +321,7 @@ export default function StyleguidePage() {
 
           {/* Tangerine */}
           <Card padding="lg">
-            <Eyebrow style={{ marginBottom: 14 }}>Script — Tangerine (logo only)</Eyebrow>
+            <Eyebrow style={{ marginBottom: 14 }}>Script, Tangerine (logo only)</Eyebrow>
             <p
               className="script"
               style={{
@@ -425,7 +425,7 @@ export default function StyleguidePage() {
       {/* ══════════════════════════════════════════════════════════════════
            03 BUTTONS
          ══════════════════════════════════════════════════════════════════ */}
-      <Section id="buttons" eyebrow="03 — Actions" heading="Buttons">
+      <Section id="buttons" eyebrow="03, Actions" heading="Buttons">
         <div
           style={{ display: "flex", flexDirection: "column", gap: 20 }}
         >
@@ -495,7 +495,7 @@ export default function StyleguidePage() {
                 color: "var(--color-ink-soft)",
               }}
             >
-              <strong style={{ color: "var(--color-ink)" }}>Animation 6 — Button press:</strong>{" "}
+              <strong style={{ color: "var(--color-ink)" }}>Animation 6, Button press:</strong>{" "}
               All buttons use CSS <code style={{ fontFamily: "monospace" }}>:active</code> →{" "}
               <code style={{ fontFamily: "monospace" }}>scale(0.98)</code> at 120ms.
               Try clicking any button above.
@@ -509,7 +509,7 @@ export default function StyleguidePage() {
       {/* ══════════════════════════════════════════════════════════════════
            04 CARDS
          ══════════════════════════════════════════════════════════════════ */}
-      <Section id="cards" eyebrow="04 — Surfaces" heading="Card Variants">
+      <Section id="cards" eyebrow="04, Surfaces" heading="Card Variants">
         <div
           style={{
             display: "grid",
@@ -542,7 +542,7 @@ export default function StyleguidePage() {
             </div>
           </Card>
 
-          {/* Accent band — pine */}
+          {/* Accent band, pine */}
           <Card
             variant="accent"
             padding="lg"
@@ -568,7 +568,7 @@ export default function StyleguidePage() {
             </p>
           </Card>
 
-          {/* Dashed — step card */}
+          {/* Dashed, step card */}
           <Card variant="dashed" padding="lg">
             <div
               style={{
@@ -589,7 +589,7 @@ export default function StyleguidePage() {
                 01
               </span>
               <div>
-                <Eyebrow style={{ marginBottom: 6 }}>Dashed — Step Card</Eyebrow>
+                <Eyebrow style={{ marginBottom: 6 }}>Dashed, Step Card</Eyebrow>
                 <h4
                   style={{
                     fontSize: "var(--text-h4)",
@@ -654,7 +654,7 @@ export default function StyleguidePage() {
       {/* ══════════════════════════════════════════════════════════════════
            05 BADGES
          ══════════════════════════════════════════════════════════════════ */}
-      <Section id="badges" eyebrow="05 — Labels" heading="Badges & Eyebrows">
+      <Section id="badges" eyebrow="05, Labels" heading="Badges & Eyebrows">
         <Card padding="lg">
           <Eyebrow style={{ marginBottom: 16 }}>Badge variants</Eyebrow>
           <div
@@ -685,7 +685,7 @@ export default function StyleguidePage() {
       {/* ══════════════════════════════════════════════════════════════════
            06 DIVIDERS
          ══════════════════════════════════════════════════════════════════ */}
-      <Section id="dividers" eyebrow="06 — Structure" heading="Dividers & Hairlines">
+      <Section id="dividers" eyebrow="06, Structure" heading="Dividers & Hairlines">
         <Card padding="lg">
           <div style={{ display: "flex", flexDirection: "column", gap: 32 }}>
             <div>
@@ -715,10 +715,10 @@ export default function StyleguidePage() {
       {/* ══════════════════════════════════════════════════════════════════
            07 LINKS
          ══════════════════════════════════════════════════════════════════ */}
-      <Section id="links" eyebrow="07 — Interactions" heading="Link Underline Draw">
+      <Section id="links" eyebrow="07, Interactions" heading="Link Underline Draw">
         <Card padding="lg">
           <Eyebrow style={{ marginBottom: 20 }}>
-            Animation 2 — gold hairline draws on hover (200ms)
+            Animation 2, gold hairline draws on hover (200ms)
           </Eyebrow>
           <p
             style={{
@@ -783,7 +783,7 @@ export default function StyleguidePage() {
       {/* ══════════════════════════════════════════════════════════════════
            08 MOTION
          ══════════════════════════════════════════════════════════════════ */}
-      <Section id="motion" eyebrow="08 — Motion" heading="Motion Tokens">
+      <Section id="motion" eyebrow="08, Motion" heading="Motion Tokens">
 
         {/* Timing table */}
         <div
@@ -852,7 +852,7 @@ export default function StyleguidePage() {
         {/* ScrollReveal live demo */}
         <div style={{ marginTop: 40 }}>
           <Eyebrow style={{ marginBottom: 24 }}>
-            Animation 1 — Fade + Rise demo (scroll past to see it fire)
+            Animation 1, Fade + Rise demo (scroll past to see it fire)
           </Eyebrow>
           <div
             style={{
@@ -873,7 +873,7 @@ export default function StyleguidePage() {
                     }}
                   >
                     This card fades in from 16px below on first scroll into
-                    view — and only once.
+                    view, and only once.
                   </p>
                 </Card>
               </ScrollReveal>
@@ -884,7 +884,7 @@ export default function StyleguidePage() {
         {/* Banned list */}
         <Card padding="lg" variant="dashed" style={{ marginTop: 32 }}>
           <Eyebrow style={{ marginBottom: 12 }}>
-            Explicitly banned — never ship these
+            Explicitly banned, never ship these
           </Eyebrow>
           <ul
             style={{
@@ -923,7 +923,7 @@ export default function StyleguidePage() {
       {/* ══════════════════════════════════════════════════════════════════
            09 HEADER PREVIEW
          ══════════════════════════════════════════════════════════════════ */}
-      <Section id="header" eyebrow="09 — Navigation" heading="Header & Mobile Bar">
+      <Section id="header" eyebrow="09, Navigation" heading="Header & Mobile Bar">
         <div
           style={{
             display: "grid",
@@ -1004,10 +1004,10 @@ export default function StyleguidePage() {
           </Card>
         </div>
 
-        {/* Simulated mobile bar preview (not interactive — just visual) */}
+        {/* Simulated mobile bar preview (not interactive, just visual) */}
         <div style={{ marginTop: 40 }}>
           <Eyebrow style={{ marginBottom: 16 }}>
-            Mobile action bar — visual preview
+            Mobile action bar, visual preview
           </Eyebrow>
           <div
             style={{

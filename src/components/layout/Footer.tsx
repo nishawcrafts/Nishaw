@@ -1,8 +1,8 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { collections, navLinks, contact } from "@/lib/tokens";
 import { NewsletterForm } from "./NewsletterForm";
 
-/* JSON-LD — Organization + LocalBusiness */
+/* JSON-LD, Organization + LocalBusiness */
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
@@ -62,7 +62,7 @@ export function Footer() {
       >
         <div className="container">
 
-          {/* Top row — wordmark + tagline */}
+          {/* Top row, wordmark + tagline */}
           <div
             style={{
               display: "flex",

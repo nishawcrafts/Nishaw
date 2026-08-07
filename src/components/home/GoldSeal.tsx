@@ -1,10 +1,10 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useRef, useState } from "react";
 
 /* ─────────────────────────────────────────────────────────────────────────
    GoldSeal
-   Animation 6 — SVG path draw on Bespoke section entry (700ms, once)
+   Animation 6, SVG path draw on Bespoke section entry (700ms, once)
    A decorative wax-seal motif in champagne gold.
    ──────────────────────────────────────────────────────────────────────── */
 

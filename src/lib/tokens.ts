@@ -1,5 +1,5 @@
-/**
- * Nishaw Design Tokens — TypeScript mirror of globals.css @theme
+﻿/**
+ * Nishaw Design Tokens, TypeScript mirror of globals.css @theme
  * This is the single source of truth for token values in JS/TSX.
  */
 
@@ -51,7 +51,7 @@ export const accentValues: Record<AccentColor, string> = {
   gold:       colors.gold,
 };
 
-/** Contact details — single source of truth */
+/** Contact details, single source of truth */
 export const contact = {
   email:     "hello@nishaw.com",
   phone:     "+91 87589 93307",

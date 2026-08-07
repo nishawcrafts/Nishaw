@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { notFound }      from "next/navigation";
 import Link              from "next/link";
 import { getCollection, getAllSlugs } from "@/content/collections";
@@ -21,7 +21,7 @@ export async function generateMetadata(
   const col = getCollection(slug);
   if (!col) return {};
 
-  const description = `${col.promiseLine} ${col.seoH1} by Nishaw — India's premium bespoke corporate gifting brand. ${col.budgetBand}. Pan-India delivery. GST invoicing.`;
+  const description = `${col.promiseLine} ${col.seoH1} by Nishaw, India's premium bespoke corporate gifting brand. ${col.budgetBand}. Pan-India delivery. GST invoicing.`;
 
   return {
     title: col.seoH1,
@@ -255,12 +255,12 @@ export default async function CollectionSlugPage(
             </ol>
           </nav>
 
-          {/* Eyebrow — display name */}
+          {/* Eyebrow, display name */}
           <ScrollReveal>
             <Eyebrow style={{ marginBottom: 16, color: accentColor }}>{col.displayName}</Eyebrow>
           </ScrollReveal>
 
-          {/* H1 — SEO title */}
+          {/* H1, SEO title */}
           <ScrollReveal delay={80}>
             <h1
               style={{
@@ -277,7 +277,7 @@ export default async function CollectionSlugPage(
             </h1>
           </ScrollReveal>
 
-          {/* Promise line — italic lead */}
+          {/* Promise line, italic lead */}
           <ScrollReveal delay={160}>
             <p
               style={{
@@ -329,7 +329,7 @@ export default async function CollectionSlugPage(
                 }}
               >
                 Every item is chosen with intention. These are the kinds of pieces
-                that go into a {col.displayName} gift — though every order is curated
+                that go into a {col.displayName} gift, though every order is curated
                 to the brief.
               </p>
             </div>

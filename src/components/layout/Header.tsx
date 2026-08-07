@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { useEffect, useRef, useState, useCallback } from "react";
@@ -105,7 +105,7 @@ export function Header() {
           {/* Wordmark */}
           <Link
             href="/"
-            aria-label="Nishaw — home"
+            aria-label="Nishaw, home"
             style={{ display: "flex", alignItems: "baseline", gap: 2 }}
           >
             <span

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -7,7 +7,7 @@ import { MobileActionBar } from "@/components/layout/MobileActionBar";
 export const metadata: Metadata = {
   metadataBase: new URL("https://nishaw.com"),
   title: {
-    default: "Nishaw — Premium & Bespoke Corporate Gifting",
+    default: "Nishaw, Premium & Bespoke Corporate Gifting",
     template: "%s | Nishaw",
   },
   description:
@@ -24,13 +24,13 @@ export const metadata: Metadata = {
     type:     "website",
     locale:   "en_IN",
     siteName: "Nishaw",
-    title:    "Nishaw — Premium & Bespoke Corporate Gifting",
+    title:    "Nishaw, Premium & Bespoke Corporate Gifting",
     description:
       "Say more than thank you. Curated and custom-made gifts for the people who move your business forward.",
   },
   twitter: {
     card:  "summary_large_image",
-    title: "Nishaw — Premium & Bespoke Corporate Gifting",
+    title: "Nishaw, Premium & Bespoke Corporate Gifting",
   },
   robots: { index: true, follow: true },
 };
@@ -45,7 +45,7 @@ export default function RootLayout({
         <Header />
 
         {/*
-          Hero sentinel — a zero-height div at the very top of page content.
+          Hero sentinel, a zero-height div at the very top of page content.
           Header watches this via IntersectionObserver to know when to turn solid.
           MobileActionBar watches it to know when to slide up.
           Content pages should NOT add their own sentinel; this one serves all pages.

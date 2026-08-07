@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 
 interface SectionProps {
   id?: string;
@@ -15,7 +15,7 @@ interface SectionProps {
 }
 
 /**
- * Section — brand section with optional eyebrow label, heading, and ♦ divider.
+ * Section, brand section with optional eyebrow label, heading, and ♦ divider.
  * Server Component. ScrollReveal is applied per-element inside, not here.
  */
 export function Section({
