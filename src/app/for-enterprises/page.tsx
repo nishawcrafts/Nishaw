@@ -6,12 +6,12 @@ import { Divider }      from "@/components/ui/Divider";
 import { Button }       from "@/components/ui/Button";
 
 export const metadata: Metadata = {
-  title: "Bulk & Enterprise Corporate Gifting Solutions",
+  title: "Enterprise Corporate Gifting | Nishaw",
   description:
-    "Enterprise-grade corporate gifting for HR and procurement teams. Bulk pricing, dedicated account manager, brand-kit storage, multi-address delivery, GST invoicing, and annual gifting calendar management. Request a quote.",
+    "Thoughtful at one. Flawless at five hundred. Enterprise-grade corporate gifting with one account manager, centralised ordering, multi-address delivery, GST invoicing, SLAs, NDAs, and standing briefs. Discuss a programme.",
   openGraph: {
     title: "Enterprise Gifting | Nishaw",
-    description: "Bulk corporate gifting for HR and procurement teams. Streamlined, branded, and fully managed.",
+    description: "One account manager. 12 capabilities. Gifting programmes for HR and procurement teams at any scale.",
   },
 };
 
@@ -24,63 +24,91 @@ const breadcrumbLd = {
   ],
 };
 
-/* ── Enterprise benefits ──────────────────────────────────────────────── */
+/* ── Enterprise capabilities ─────────────────────────────────────────── */
 const benefits = [
   {
-    title:  "Volume-Based Pricing",
-    body:   "Transparent per-unit cost breakdowns from 50 units upward. Discounts of 10 to 25% on larger volumes. No hidden sourcing fees or handling charges.",
-    glyph:  "◎",
-    stat:   "10-25%",
-    statLabel: "volume discount",
-  },
-  {
-    title:  "Dedicated Account Manager",
-    body:   "One person who knows your brand, your gifting programme, and your recipients. Available on WhatsApp and email. No ticketing systems, no queues.",
-    glyph:  "✐",
-    stat:   "1",
+    title:     "One account manager",
+    body:      "One person who knows your brand, your gifting programme, and your recipients. Available on WhatsApp and email. No ticketing systems, no queues, no rebriefing.",
+    glyph:     "✐",
+    stat:      "1",
     statLabel: "point of contact",
   },
   {
-    title:  "Brand-Kit Storage",
-    body:   "We store your logo files, brand colour codes, preferred packaging finish, and approved messaging. Every order from your account ships with consistent, correct branding.",
-    glyph:  "◆",
-    stat:   "0",
-    statLabel: "re-briefing required",
+    title:     "Centralised ordering",
+    body:      "Place all orders, across teams, occasions, and cities, from a single account. One approval flow. One consolidated invoice at the end of each cycle.",
+    glyph:     "◎",
+    stat:      "One",
+    statLabel: "account, any scale",
   },
   {
-    title:  "Multi-Address Split Shipping",
-    body:   "Place one order and ship to fifty addresses across India. We generate individual tracking links, send confirmation photographs, and compile a delivery summary report.",
-    glyph:  "✦",
-    stat:   "Pan-India",
+    title:     "Multi-address delivery",
+    body:      "Place one order and ship to 500 addresses across India. Individual tracking links, confirmation photographs, and a full delivery summary report.",
+    glyph:     "✦",
+    stat:      "Pan-India",
     statLabel: "split delivery",
   },
   {
-    title:  "GST-Compliant Invoicing",
-    body:   "Full tax invoices with HSN codes and our GSTIN on every order. B2B buyers receive invoices structured for input tax credit claims. PO-based ordering available.",
-    glyph:  "◉",
-    stat:   "100%",
+    title:     "Recipient-data management",
+    body:      "We securely store and update your recipient database: names, addresses, preferences, dietary notes. Every order is addressed and personalised without re-uploading a spreadsheet.",
+    glyph:     "◆",
+    stat:      "Secure",
+    statLabel: "data handling",
+  },
+  {
+    title:     "Custom branding",
+    body:      "We store your logo files, brand colours, approved packaging finish, and messaging templates. Every order ships with consistent, correct branding from day one.",
+    glyph:     "◉",
+    stat:      "0",
+    statLabel: "re-briefing required",
+  },
+  {
+    title:     "GST and PO invoicing",
+    body:      "Full tax invoices with HSN codes on every order. B2B buyers receive invoices structured for input-tax-credit claims. PO-based ordering and advance scheduling available.",
+    glyph:     "◎",
+    stat:      "100%",
     statLabel: "GST compliant",
   },
   {
-    title:  "Annual Gifting Calendar",
-    body:   "We help you plan the full-year programme: onboarding kits, work anniversaries, Diwali, quarter-end awards, and year-end leadership gifts. Briefed once, managed throughout.",
-    glyph:  "◎",
-    stat:   "12",
-    statLabel: "months planned",
+    title:     "Monthly billing",
+    body:      "Consolidate all orders into a single end-of-month invoice. Ideal for HR teams running standing onboarding kits or recognition programmes across 12 months.",
+    glyph:     "✐",
+    stat:      "Monthly",
+    statLabel: "consolidated billing",
   },
   {
-    title:  "Tracking and Reporting",
-    body:   "Real-time tracking links for all shipments. After each delivery run, we share a report covering dispatch dates, delivery status, and any exceptions to resolve.",
-    glyph:  "✐",
-    stat:   "Live",
-    statLabel: "delivery tracking",
+    title:     "Standing briefs",
+    body:      "Set a gift once for a recurring occasion: monthly onboarding kits, quarterly recognition gifts, festive hampers. Reorders need only a recipient list and a confirmation.",
+    glyph:     "◆",
+    stat:      "Set once",
+    statLabel: "reorder in seconds",
   },
   {
-    title:  "NDAs and Confidentiality",
-    body:   "For enterprises with sensitive gifting programmes (M&A announcements, leadership transitions, board-level gifting), we sign mutual NDAs before any brief is shared.",
-    glyph:  "◆",
-    stat:   "NDA",
+    title:     "Reorder programmes",
+    body:      "For enterprises that gift at consistent intervals, we build reorder programmes with locked-in pricing, preferred production slots, and no lead-time surprises.",
+    glyph:     "◉",
+    stat:      "Priority",
+    statLabel: "production slots",
+  },
+  {
+    title:     "NDA and confidentiality",
+    body:      "For sensitive gifting programmes (M&A announcements, leadership transitions, board-level gifting), we sign mutual NDAs before any brief is shared.",
+    glyph:     "✦",
+    stat:      "NDA",
     statLabel: "on request",
+  },
+  {
+    title:     "SLA and delivery guarantee",
+    body:      "We commit to agreed delivery windows in writing. For large programmes, we define SLAs upfront covering production timelines, dispatch dates, and exception resolution.",
+    glyph:     "◎",
+    stat:      "SLA",
+    statLabel: "written commitment",
+  },
+  {
+    title:     "Damage and replacement",
+    body:      "Any gift that arrives damaged is replaced at our cost, no questions asked. We photograph every order before dispatch and handle all courier claims internally.",
+    glyph:     "✐",
+    stat:      "100%",
+    statLabel: "replaced if damaged",
   },
 ];
 
@@ -166,7 +194,9 @@ export default function ForEnterprisesPage() {
                     marginBottom:  20,
                   }}
                 >
-                  Bulk &amp; Enterprise Corporate Gifting Solutions
+                  Thoughtful at one.
+                  <br />
+                  <em style={{ fontWeight: 300, fontStyle: "italic" }}>Flawless at five hundred.</em>
                 </h1>
               </ScrollReveal>
               <ScrollReveal delay={160}>
@@ -181,15 +211,15 @@ export default function ForEnterprisesPage() {
                   }}
                 >
                   For HR leaders, procurement teams, and the people who manage
-                  gifting at scale. Volume pricing, a dedicated account manager,
-                  brand-kit storage, multi-address delivery, and the paperwork
-                  handled correctly from day one.
+                  gifting at scale: one account manager, centralised ordering,
+                  multi-address delivery, GST invoicing, monthly billing,
+                  standing briefs, and NDAs when you need them.
                 </p>
               </ScrollReveal>
               <ScrollReveal delay={220}>
                 <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
                   <Link href="/contact?occasion=enterprise" className="btn btn-gold btn-lg">
-                    Request an Enterprise Quote
+                    Discuss an Enterprise Programme
                   </Link>
                   <Button href="/how-we-gift" variant="ghost" size="lg">How it works</Button>
                 </div>
@@ -236,9 +266,12 @@ export default function ForEnterprisesPage() {
           <ScrollReveal>
             <div style={{ marginBottom: 52 }}>
               <Eyebrow style={{ marginBottom: 14 }}>What You Get</Eyebrow>
-              <h2 style={{ fontFamily: "var(--font-heading)", fontSize: "var(--text-h2)", letterSpacing: "-0.02em", maxWidth: 480 }}>
+              <h2 style={{ fontFamily: "var(--font-heading)", fontSize: "var(--text-h2)", letterSpacing: "-0.02em", maxWidth: 540 }}>
                 Everything a gifting programme needs.
               </h2>
+              <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-body-lg)", color: "var(--color-ink-soft)", lineHeight: 1.65, maxWidth: 560, marginTop: 16 }}>
+                Twelve capabilities, one account. Built so your team never has to chase a courier or rebrief a supplier.
+              </p>
             </div>
           </ScrollReveal>
 
@@ -401,7 +434,7 @@ export default function ForEnterprisesPage() {
             </p>
             <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap", marginBottom: 28 }}>
               <Link href="/contact?occasion=enterprise" className="btn btn-gold btn-lg">
-                Request an Enterprise Quote
+                Discuss an Enterprise Programme
               </Link>
               <Button href="/how-we-gift" variant="ghost" size="lg">See process details</Button>
             </div>

@@ -81,6 +81,27 @@ const gallerySlots = [
   { slug: 'gallery-06', alt: 'A monogrammed leather portfolio open on a desk, beside a brass pen set in a navy cloth roll' },
 ];
 
+const testimonials = [
+  {
+    quote:   "Nishaw handled our entire 2024 Diwali gifting across 14 cities. Zero issues, and packaging our clients actually commented on.",
+    name:    "Priya S.",
+    title:   "Chief People Officer",
+    accent:  "pine" as const,
+  },
+  {
+    quote:   "We have been sending client gifts for eight years. Nishaw is the first team that understood the brief without being asked twice.",
+    name:    "Rahul M.",
+    title:   "Head of Client Relations, Private Bank",
+    accent:  "sapphire" as const,
+  },
+  {
+    quote:   "The quality exceeded what we expected at this price point. And the account management made our team's lives much easier.",
+    name:    "Shreya T.",
+    title:   "Chief of Staff, VC-backed SaaS Company",
+    accent:  "plum" as const,
+  },
+];
+
 export default function Home() {
   return (
     <main>
@@ -298,7 +319,100 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 14. NEW: GALLERY STRIP */}
+      {/* 14. NEW: TESTIMONIALS */}
+      <section className="section-py" style={{ backgroundColor: 'var(--color-paper-deep)', borderTop: '1px solid var(--color-gold-soft)' }}>
+        <div className="container">
+          <ScrollReveal>
+            <Eyebrow style={{ marginBottom: 40 }}>Heard from clients</Eyebrow>
+          </ScrollReveal>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20 }}>
+            {testimonials.map((t, i) => (
+              <ScrollReveal key={i} delay={i * 80}>
+                <figure
+                  className="card"
+                  style={{ padding: '32px 28px', height: '100%', display: 'flex', flexDirection: 'column', gap: 20, margin: 0 }}
+                >
+                  {/* Large opening quote */}
+                  <span
+                    aria-hidden
+                    style={{
+                      fontFamily: 'var(--font-heading)',
+                      fontSize:   '3rem',
+                      color:      `var(--color-${t.accent})`,
+                      opacity:    0.3,
+                      lineHeight: 1,
+                      fontWeight: 300,
+                    }}
+                  >
+                    &ldquo;
+                  </span>
+
+                  {/* Quote */}
+                  <blockquote style={{ flex: 1, margin: 0 }}>
+                    <p style={{
+                      fontFamily: 'var(--font-heading)',
+                      fontStyle:  'italic',
+                      fontWeight: 300,
+                      fontSize:   'var(--text-h4)',
+                      color:      'var(--color-ink)',
+                      lineHeight: 1.55,
+                    }}>
+                      {t.quote}
+                    </p>
+                  </blockquote>
+
+                  {/* Attribution */}
+                  <figcaption style={{ display: 'flex', alignItems: 'center', gap: 12, paddingTop: 16, borderTop: '1px solid var(--color-ink-faint)' }}>
+                    {/* Logo slot */}
+                    <div
+                      aria-label="Company logo placeholder"
+                      style={{
+                        width:          40,
+                        height:         40,
+                        flexShrink:     0,
+                        borderRadius:   'var(--radius-sm)',
+                        border:         '1px solid var(--color-gold-soft)',
+                        background:     'var(--color-paper)',
+                        display:        'flex',
+                        alignItems:     'center',
+                        justifyContent: 'center',
+                      }}
+                    >
+                      <span aria-hidden style={{ color: 'var(--color-gold)', opacity: 0.4, fontSize: 11 }}>♦</span>
+                    </div>
+
+                    {/* Name + title */}
+                    <div>
+                      <span style={{
+                        display:     'block',
+                        fontFamily:  'var(--font-body)',
+                        fontSize:    'var(--text-body-sm)',
+                        fontWeight:  600,
+                        color:       'var(--color-ink)',
+                        letterSpacing: '0.02em',
+                      }}>
+                        {/* Typographic dash before name, rendered as separate element */}
+                        <span aria-hidden style={{ color: `var(--color-${t.accent})`, marginRight: 6, fontWeight: 300 }}>&mdash;</span>{t.name}
+                      </span>
+                      <span style={{
+                        display:    'block',
+                        fontFamily: 'var(--font-body)',
+                        fontSize:   'var(--text-body-sm)',
+                        color:      'var(--color-ink-soft)',
+                        marginTop:  2,
+                      }}>
+                        {t.title}
+                      </span>
+                    </div>
+                  </figcaption>
+                </figure>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 15. NEW: GALLERY STRIP */}
       <section style={{ backgroundColor: 'var(--color-paper-deep)', padding: 'clamp(56px, 8vw, 80px) 0', borderTop: '1px solid var(--color-gold-soft)' }}>
         <ScrollReveal>
           <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '32px' }}>
