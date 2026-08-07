@@ -275,7 +275,7 @@ export default function ForEnterprisesPage() {
                       <span style={{ display: "block", fontFamily: "var(--font-heading)", fontSize: "var(--text-h3)", fontWeight: 300, color: "var(--color-gold)", lineHeight: 1 }}>
                         {benefit.stat}
                       </span>
-                      <span style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-eyebrow)", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--color-ink-soft)", fontSize: "10px" }}>
+                      <span style={{ fontFamily: "var(--font-body)", fontSize: "10px", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--color-ink-soft)" }}>
                         {benefit.statLabel}
                       </span>
                     </div>
