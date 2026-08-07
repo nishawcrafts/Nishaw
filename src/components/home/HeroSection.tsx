@@ -107,6 +107,8 @@ export function HeroSection() {
           src="/images/hero.jpg"
           alt=""
           aria-hidden="true"
+          loading="eager"
+          fetchPriority="high"
           style={{
             width: "100%",
             height: "100%",

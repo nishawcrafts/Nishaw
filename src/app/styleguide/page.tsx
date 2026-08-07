@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   Button,
@@ -984,7 +984,7 @@ export default function StyleguidePage() {
                 "Hidden on screens ≥768px (CSS display:none)",
                 "Slides up 250ms past #hero-sentinel",
                 "Email → mailto:hello@nishaw.com",
-                "WhatsApp → wa.me/918758993307 with pre-filled message",
+                "WhatsApp → wa.me/919090232242 with pre-filled message",
                 "Sits above safe-area-inset-bottom",
                 "prefers-reduced-motion: appears instantly",
               ].map((item) => (

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Nishaw Design Tokens, TypeScript mirror of globals.css @theme
  * This is the single source of truth for token values in JS/TSX.
  */
@@ -28,7 +28,7 @@ export const radii = {
   pill: "9999px",
 } as const;
 
-/** Accent colours per collection (maps slug → CSS colour) */
+/** Accent colours per collection (maps slug ? CSS colour) */
 export const collectionAccents = {
   "welcome-kits":       colors.pine,
   "milestone-gifts":    colors.sapphire,
@@ -54,8 +54,8 @@ export const accentValues: Record<AccentColor, string> = {
 /** Contact details, single source of truth */
 export const contact = {
   email:     "hello@nishaw.com",
-  phone:     "+91 87589 93307",
-  whatsapp:  "https://wa.me/918758993307?text=Hi%20Nishaw%2C%20I%27d%20like%20to%20discuss%20corporate%20gifting",
+  phone:     "+91 9090 232 242",
+  whatsapp:  "https://wa.me/919090232242?text=Hi%20Nishaw%2C%20I%27d%20like%20to%20discuss%20corporate%20gifting",
   instagram: "",
 } as const;
 

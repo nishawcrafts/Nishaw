@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { notFound }      from "next/navigation";
 import Link              from "next/link";
 import { getCollection, getAllSlugs } from "@/content/collections";
@@ -587,7 +587,7 @@ export default async function CollectionSlugPage(
                 hello@nishaw.com
               </a>
               <a
-                href="https://wa.me/918758993307?text=Hi%20Nishaw%2C%20I%27d%20like%20to%20discuss%20corporate%20gifting"
+                href="https://wa.me/919090232242?text=Hi%20Nishaw%2C%20I%27d%20like%20to%20discuss%20corporate%20gifting"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-body-sm)", color: "var(--color-gold)" }}

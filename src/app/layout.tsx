@@ -1,8 +1,9 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import "./globals.css";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
+import { Header }          from "@/components/layout/Header";
+import { Footer }          from "@/components/layout/Footer";
 import { MobileActionBar } from "@/components/layout/MobileActionBar";
+import { SkipNav }         from "@/components/ui/SkipNav";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://nishaw.com"),
@@ -21,18 +22,25 @@ export const metadata: Metadata = {
     "Nishaw",
   ],
   openGraph: {
-    type:     "website",
-    locale:   "en_IN",
-    siteName: "Nishaw",
-    title:    "Nishaw, Premium & Bespoke Corporate Gifting",
-    description:
-      "Say more than thank you. Curated and custom-made gifts for the people who move your business forward.",
+    type:        "website",
+    locale:      "en_IN",
+    siteName:    "Nishaw",
+    title:       "Nishaw, Premium & Bespoke Corporate Gifting",
+    description: "Say more than thank you. Curated and custom-made gifts for the people who move your business forward.",
+    images: [{
+      url:    "/og-image.jpg",
+      width:  1200,
+      height: 630,
+      alt:    "Nishaw — Bespoke Corporate Gifting. Say more than thank you.",
+    }],
   },
   twitter: {
-    card:  "summary_large_image",
-    title: "Nishaw, Premium & Bespoke Corporate Gifting",
+    card:   "summary_large_image",
+    title:  "Nishaw, Premium & Bespoke Corporate Gifting",
+    images: ["/og-image.jpg"],
   },
-  robots: { index: true, follow: true },
+  robots:   { index: true, follow: true },
+  alternates: { canonical: "https://nishaw.com" },
 };
 
 export default function RootLayout({
@@ -42,6 +50,7 @@ export default function RootLayout({
     <html lang="en">
       <head />
       <body>
+        <SkipNav />
         <Header />
 
         {/*

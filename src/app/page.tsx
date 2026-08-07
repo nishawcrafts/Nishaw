@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { HeroSection }  from "@/components/home/HeroSection";
 import { GoldSeal }     from "@/components/home/GoldSeal";
@@ -702,7 +702,7 @@ export default function HomePage() {
                 hello@nishaw.com
               </a>
               <a
-                href="tel:+918758993307"
+                href="tel:+919090232242"
                 className="link-draw"
                 style={{
                   fontFamily: "var(--font-body)",
@@ -710,10 +710,10 @@ export default function HomePage() {
                   color:      "var(--color-ink-soft)",
                 }}
               >
-                +91 87589 93307
+                +91 9090 232 242
               </a>
               <a
-                href="https://wa.me/918758993307?text=Hi%20Nishaw%2C%20I%27d%20like%20to%20discuss%20corporate%20gifting"
+                href="https://wa.me/919090232242?text=Hi%20Nishaw%2C%20I%27d%20like%20to%20discuss%20corporate%20gifting"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

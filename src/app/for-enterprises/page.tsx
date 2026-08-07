@@ -411,11 +411,11 @@ export default function ForEnterprisesPage() {
               <a href="mailto:hello@nishaw.com" className="link-draw" style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-body-sm)", color: "var(--color-ink-soft)" }}>
                 hello@nishaw.com
               </a>
-              <a href="tel:+918758993307" className="link-draw" style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-body-sm)", color: "var(--color-ink-soft)" }}>
-                +91 87589 93307
+              <a href="tel:+919090232242" className="link-draw" style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-body-sm)", color: "var(--color-ink-soft)" }}>
+                +91 9090 232 242
               </a>
               <a
-                href="https://wa.me/918758993307?text=Hi%20Nishaw%2C%20I%27d%20like%20to%20discuss%20enterprise%20corporate%20gifting"
+                href="https://wa.me/919090232242?text=Hi%20Nishaw%2C%20I%27d%20like%20to%20discuss%20enterprise%20corporate%20gifting"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-body-sm)", color: "var(--color-gold)" }}

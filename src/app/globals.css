@@ -439,3 +439,87 @@ h1,h2,h3,h4,h5 {
   line-height: 1;
   display: block;
 }
+
+/* ─────────────────────────────────────────────────────────────────────────
+   PERFORMANCE — Image defaults (CLS prevention)
+   ──────────────────────────────────────────────────────────────────────── */
+img {
+  max-width: 100%;
+  height: auto;
+  /* Prevent layout shift — img must have explicit width/height or container */
+  display: block;
+}
+
+/* Below-the-fold images: browser lazy-loads when loading="lazy" is present.
+   Hero image should always be eager (set in markup). */
+img[loading="lazy"] {
+  content-visibility: auto;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   ACCESSIBILITY — Form controls
+   ──────────────────────────────────────────────────────────────────────── */
+/* Gold focus ring on all form controls */
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline:        2px solid var(--color-gold);
+  outline-offset: 2px;
+  border-color:   var(--color-gold) !important;
+}
+
+/* aria-invalid: terracotta border on invalid fields */
+input[aria-invalid="true"],
+select[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+  border-color: var(--color-terracotta) !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   CARD DASHED variant (for enterprises page steps)
+   ──────────────────────────────────────────────────────────────────────── */
+.card-dashed {
+  border:        1px dashed var(--color-gold-soft);
+  border-radius: var(--radius-card);
+  background:    var(--color-paper);
+  transition:    border-color 200ms ease-out;
+}
+.card-dashed:hover {
+  border-color: var(--color-gold);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   ANIMATION — fadeSlideUp (used by success state, hero sub etc.)
+   ──────────────────────────────────────────────────────────────────────── */
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   SKIP NAVIGATION link (lives in layout.tsx as a JSX element)
+   Ensure focus-visible on it too since it uses onFocus/onBlur JS
+   ──────────────────────────────────────────────────────────────────────── */
+a[href="#main-content"]:focus {
+  top: 0 !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   CONTACT FORM — grid responsive collapse
+   ──────────────────────────────────────────────────────────────────────── */
+@media (max-width: 860px) {
+  /* Stack form and sidebar vertically */
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   JOURNAL article body — responsive reading width
+   ──────────────────────────────────────────────────────────────────────── */
+@media (max-width: 860px) {
+  /* On mobile, collapse sidebar below article */
+  .journal-article-grid {
+    grid-template-columns: 1fr !important;
+  }
+}

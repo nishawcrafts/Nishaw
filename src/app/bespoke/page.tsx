@@ -420,6 +420,9 @@ export default function BespokePage() {
               <img
                 src="/images/bespoke-gallery.jpg"
                 alt="A Nishaw bespoke gifting flat-lay: an open premium gift box revealing a leather journal with gold-foil initials and a brass pen, surrounded by tissue paper, a wax seal stamp, and artisan snacks on cream linen"
+                loading="lazy"
+                width="900"
+                height="560"
                 style={{
                   width:      "100%",
                   height:     "auto",
@@ -510,7 +513,7 @@ export default function BespokePage() {
             </div>
             <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-body-sm)", color: "var(--color-ink-soft)" }}>
               Or reach us directly on{" "}
-              <a href="https://wa.me/918758993307?text=Hi%20Nishaw%2C%20I%27d%20like%20to%20discuss%20a%20bespoke%20gift" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-gold)" }}>
+              <a href="https://wa.me/919090232242?text=Hi%20Nishaw%2C%20I%27d%20like%20to%20discuss%20a%20bespoke%20gift" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-gold)" }}>
                 WhatsApp
               </a>
               {" "}or{" "}
