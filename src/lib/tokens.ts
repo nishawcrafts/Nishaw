@@ -74,6 +74,7 @@ export const navLinks = [
   { label: "How We Gift",     href: "/how-we-gift" },
   { label: "For Enterprises", href: "/for-enterprises" },
   { label: "The Gift Register",href: "/gift-register" },
+  { label: "Gallery",         href: "/gallery" },
   { label: "The Nishaw Story",href: "/story" },
   { label: "The Art of Giving",href: "/journal" },
 ] as const;

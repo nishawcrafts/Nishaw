@@ -73,12 +73,12 @@ const steps = [
 ];
 
 const gallerySlots = [
-  { slug: 'gallery-01', alt: 'A Nishaw gift box open on a white marble surface, revealing a leather journal with gold-foil initials' },
-  { slug: 'gallery-02', alt: 'Artisan hand-painted diyas arranged in a silk-lined wooden gift box' },
-  { slug: 'gallery-03', alt: 'A close-up of a wax seal being applied to an ivory enclosure card in emerald green' },
-  { slug: 'gallery-04', alt: 'Single-malt whisky in a custom Nishaw sleeve beside sterling cufflinks on a dark velvet surface' },
-  { slug: 'gallery-05', alt: 'Stacked premium gift boxes with champagne ribbon in a corporate delivery scene' },
-  { slug: 'gallery-06', alt: 'A monogrammed leather portfolio open on a desk, beside a brass pen set in a navy cloth roll' },
+  { slug: 'gifts-01',    alt: 'A Nishaw welcome kit laid out flat: leather journal, brass pen in cloth roll, artisan snack tray on ivory linen' },
+  { slug: 'details-01', alt: 'Close-up of a deep emerald wax seal being applied to an ivory cotton-paper enclosure card, a Nishaw signature detail' },
+  { slug: 'packaging-01',alt: 'A Nishaw outer box in ivory with gold debossed wordmark and an emerald ribbon, seen from above on a dark surface' },
+  { slug: 'gifts-03',   alt: 'Single-malt whisky in a custom Nishaw sleeve beside sterling silver cufflinks on dark velvet, The Chairman curation' },
+  { slug: 'details-03', alt: 'A handwritten enclosure note on cotton paper in ink, beside the wax seal crest and a champagne ribbon spool' },
+  { slug: 'unboxing-03',alt: 'A recipient reading a handwritten Nishaw enclosure note, gift box open in the foreground, warm office light' },
 ];
 
 const testimonials = [
