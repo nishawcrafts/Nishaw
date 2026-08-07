@@ -1,6 +1,6 @@
 "use client";
 
-/** Keyboard-accessible skip navigation link — client-only for focus handlers. */
+/** Keyboard-accessible skip navigation link - client-only for focus handlers. */
 export function SkipNav() {
   return (
     <a

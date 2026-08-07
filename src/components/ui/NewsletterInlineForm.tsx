@@ -1,6 +1,6 @@
 "use client";
 
-/** Inline newsletter subscription form — client-only for event handler. */
+/** Inline newsletter subscription form - client-only for event handler. */
 export function NewsletterInlineForm() {
   return (
     <form

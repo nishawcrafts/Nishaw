@@ -7,7 +7,7 @@ import { Divider }       from "@/components/ui/Divider";
 import { Button }        from "@/components/ui/Button";
 
 export const metadata: Metadata = {
-  title: "About Nishaw — Our Story, Philosophy & the People Behind the Gifts",
+  title: "About Nishaw: Our Story, Philosophy & the People Behind the Gifts",
   description:
     "Nishaw was built on a single belief: that the gift reflects the giver. Read the founders' note, our craft philosophy, how we source, and the meaning of the name.",
   openGraph: {
@@ -75,7 +75,7 @@ export default function StoryPage() {
 
           <Eyebrow style={{ marginBottom: 20 }}>The Nishaw Story</Eyebrow>
 
-          {/* Split-text H1 — client component */}
+          {/* Split-text H1 - client component */}
           <SplitHeading
             text="About Nishaw."
             as="h1"

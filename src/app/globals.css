@@ -1,5 +1,5 @@
 /* ─────────────────────────────────────────────────────────────────────────
-   NISHAW DESIGN SYSTEM — globals.css
+   NISHAW DESIGN SYSTEM - globals.css
    Tailwind v4 CSS-first configuration
    "Say more than thank you." · "Reserved for the remarkable."
    ──────────────────────────────────────────────────────────────────────── */
@@ -51,7 +51,7 @@
   --radius-sm:     8px;
   --radius-pill:   9999px;
 
-  /* Motion — these are the ONLY timings used sitewide */
+  /* Motion - these are the ONLY timings used sitewide */
   --ease-out:      cubic-bezier(0.22, 1, 0.36, 1);
   --dur-fast:      120ms;   /* button press */
   --dur-link:      200ms;   /* underline draw, card lift */
@@ -119,7 +119,7 @@ h1,h2,h3,h4,h5 {
   font-weight: 300;
 }
 
-/* Tangerine script — ONLY for logo wordmark and closing note */
+/* Tangerine script - ONLY for logo wordmark and closing note */
 .script {
   font-family: var(--font-script);
   font-weight: 700;
@@ -161,7 +161,7 @@ h1,h2,h3,h4,h5 {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
-   LINK UNDERLINE DRAW  (animation 2 — gold hairline, 200ms)
+   LINK UNDERLINE DRAW  (animation 2 - gold hairline, 200ms)
    ──────────────────────────────────────────────────────────────────────── */
 .link-draw {
   position: relative;
@@ -181,7 +181,7 @@ h1,h2,h3,h4,h5 {
 .link-draw:focus-visible::after { width: 100%; }
 
 /* ─────────────────────────────────────────────────────────────────────────
-   BUTTONS  (animation 6 — press scale 0.98, 120ms)
+   BUTTONS  (animation 6 - press scale 0.98, 120ms)
    ──────────────────────────────────────────────────────────────────────── */
 .btn {
   display: inline-flex;
@@ -221,7 +221,7 @@ h1,h2,h3,h4,h5 {
   border-color: #a07a3a;
 }
 
-/* Ghost — ink outline */
+/* Ghost - ink outline */
 .btn-ghost {
   background: transparent;
   color: var(--color-ink);
@@ -232,7 +232,7 @@ h1,h2,h3,h4,h5 {
   color: var(--color-paper);
 }
 
-/* Ghost gold — gold outline */
+/* Ghost gold - gold outline */
 .btn-ghost-gold {
   background: transparent;
   color: var(--color-gold);
@@ -247,7 +247,7 @@ h1,h2,h3,h4,h5 {
 .btn-lg { padding: 16px 40px; font-size: var(--text-body); }
 
 /* ─────────────────────────────────────────────────────────────────────────
-   CARDS  (animation 3 — lift -4px + shadow bloom, 200ms)
+   CARDS  (animation 3 - lift -4px + shadow bloom, 200ms)
    ──────────────────────────────────────────────────────────────────────── */
 .card {
   background: rgba(255,249,237,0.9);
@@ -269,7 +269,7 @@ h1,h2,h3,h4,h5 {
   border-radius: var(--radius-card);
 }
 
-/* Accent band card — top border in collection accent colour */
+/* Accent band card - top border in collection accent colour */
 .card-accent {
   background: rgba(255,249,237,0.9);
   border: 1px solid var(--color-gold-soft);
@@ -286,7 +286,7 @@ h1,h2,h3,h4,h5 {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
-   SCROLL-REVEAL  (animation 1 — fade+rise 16px, 500ms, once)
+   SCROLL-REVEAL  (animation 1 - fade+rise 16px, 500ms, once)
    ──────────────────────────────────────────────────────────────────────── */
 .reveal {
   opacity: 0;
@@ -344,7 +344,7 @@ h1,h2,h3,h4,h5 {
 .nav-overlay.is-open { opacity: 1; pointer-events: auto; }
 
 /* ─────────────────────────────────────────────────────────────────────────
-   MOBILE ACTION BAR  (animation 9 — slide-up 250ms)
+   MOBILE ACTION BAR  (animation 9 - slide-up 250ms)
    ──────────────────────────────────────────────────────────────────────── */
 .mobile-bar {
   position: fixed;
@@ -380,7 +380,7 @@ h1,h2,h3,h4,h5 {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
-   PREFERS-REDUCED-MOTION  — kill ALL transitions / animations
+   PREFERS-REDUCED-MOTION  - kill ALL transitions / animations
    ──────────────────────────────────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -403,7 +403,7 @@ h1,h2,h3,h4,h5 {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
-   HOME PAGE — RESPONSIVE OVERRIDES
+   HOME PAGE - RESPONSIVE OVERRIDES
    ──────────────────────────────────────────────────────────────────────── */
 
 /* Hero: on mobile switch gradient to full overlay for text readability */
@@ -441,12 +441,12 @@ h1,h2,h3,h4,h5 {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
-   PERFORMANCE — Image defaults (CLS prevention)
+   PERFORMANCE - Image defaults (CLS prevention)
    ──────────────────────────────────────────────────────────────────────── */
 img {
   max-width: 100%;
   height: auto;
-  /* Prevent layout shift — img must have explicit width/height or container */
+  /* Prevent layout shift - img must have explicit width/height or container */
   display: block;
 }
 
@@ -457,7 +457,7 @@ img[loading="lazy"] {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
-   ACCESSIBILITY — Form controls
+   ACCESSIBILITY - Form controls
    ──────────────────────────────────────────────────────────────────────── */
 /* Gold focus ring on all form controls */
 input:focus-visible,
@@ -489,7 +489,7 @@ textarea[aria-invalid="true"] {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
-   ANIMATION — fadeSlideUp (used by success state, hero sub etc.)
+   ANIMATION - fadeSlideUp (used by success state, hero sub etc.)
    ──────────────────────────────────────────────────────────────────────── */
 @keyframes fadeSlideUp {
   from { opacity: 0; transform: translateY(20px); }
@@ -505,7 +505,7 @@ a[href="#main-content"]:focus {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
-   CONTACT FORM — grid responsive collapse
+   CONTACT FORM - grid responsive collapse
    ──────────────────────────────────────────────────────────────────────── */
 @media (max-width: 860px) {
   /* Stack form and sidebar vertically */
@@ -515,7 +515,7 @@ a[href="#main-content"]:focus {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
-   JOURNAL article body — responsive reading width
+   JOURNAL article body - responsive reading width
    ──────────────────────────────────────────────────────────────────────── */
 @media (max-width: 860px) {
   /* On mobile, collapse sidebar below article */

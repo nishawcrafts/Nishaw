@@ -201,7 +201,7 @@ export default function ContactPage() {
                         Phone
                       </span>
                       <span style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-body)", color: "var(--color-ink)" }}>
-                        +91 9090 232 242
+                        +91 9090232242
                       </span>
                     </div>
                   </a>

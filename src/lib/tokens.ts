@@ -54,7 +54,7 @@ export const accentValues: Record<AccentColor, string> = {
 /** Contact details, single source of truth */
 export const contact = {
   email:     "hello@nishaw.com",
-  phone:     "+91 9090 232 242",
+  phone:     "+91 9090232242",
   whatsapp:  "https://wa.me/919090232242?text=Hi%20Nishaw%2C%20I%27d%20like%20to%20discuss%20corporate%20gifting",
   instagram: "",
 } as const;

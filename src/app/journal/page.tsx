@@ -7,7 +7,7 @@ import { Button }                 from "@/components/ui/Button";
 import { NewsletterInlineForm }   from "@/components/ui/NewsletterInlineForm";
 
 export const metadata: Metadata = {
-  title: "The Art of Giving — Corporate Gifting Ideas & Guides",
+  title: "The Art of Giving: Corporate Gifting Ideas & Guides",
   description:
     "Ideas, guides, and considered perspectives on the art of corporate gifting in India. Diwali gifting guides, welcome kit frameworks, client gifting etiquette, and more.",
   openGraph: {

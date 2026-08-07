@@ -710,7 +710,7 @@ export default function HomePage() {
                   color:      "var(--color-ink-soft)",
                 }}
               >
-                +91 9090 232 242
+                +91 9090232242
               </a>
               <a
                 href="https://wa.me/919090232242?text=Hi%20Nishaw%2C%20I%27d%20like%20to%20discuss%20corporate%20gifting"

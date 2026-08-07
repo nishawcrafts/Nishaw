@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 /**
- * /api/contact  — Route handler that forwards to Formspree.
+ * /api/contact  - Route handler that forwards to Formspree.
  * Set FORMSPREE_ID (server-side) in .env.local to enable real email sending.
  * Without it, submissions succeed in dev but emails are not sent.
  */
