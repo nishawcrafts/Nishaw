@@ -68,15 +68,41 @@ export const contact = {
 } as const;
 
 /** Nav links */
+/** Grouped desktop navigation.
+ *  - items without `children` render as a direct link
+ *  - items with `children` render as a hover dropdown
+ */
+export const navGroups = [
+  { label: "Collections", href: "/collections" },
+  { label: "Bespoke",     href: "/bespoke" },
+  { label: "Enterprise",  href: "/for-enterprises" },
+  {
+    label: "Our Work",
+    children: [
+      { label: "Gift Register", href: "/gift-register" },
+      { label: "Gallery",       href: "/gallery" },
+    ],
+  },
+  {
+    label: "About",
+    children: [
+      { label: "Our Story",   href: "/story" },
+      { label: "How We Gift", href: "/how-we-gift" },
+      { label: "Journal",     href: "/journal" },
+    ],
+  },
+] as const;
+
+/** Flat list kept for any component that still needs it (e.g. footer) */
 export const navLinks = [
-  { label: "The Collections", href: "/collections" },
-  { label: "Bespoke",         href: "/bespoke" },
-  { label: "How We Gift",     href: "/how-we-gift" },
-  { label: "For Enterprises", href: "/for-enterprises" },
-  { label: "The Gift Register",href: "/gift-register" },
-  { label: "Gallery",         href: "/gallery" },
-  { label: "The Nishaw Story",href: "/story" },
-  { label: "The Art of Giving",href: "/journal" },
+  { label: "The Collections",  href: "/collections" },
+  { label: "Bespoke",          href: "/bespoke" },
+  { label: "For Enterprises",  href: "/for-enterprises" },
+  { label: "The Gift Register", href: "/gift-register" },
+  { label: "Gallery",          href: "/gallery" },
+  { label: "The Nishaw Story", href: "/story" },
+  { label: "How We Gift",      href: "/how-we-gift" },
+  { label: "Journal",          href: "/journal" },
 ] as const;
 
 /** Footer collections list */
