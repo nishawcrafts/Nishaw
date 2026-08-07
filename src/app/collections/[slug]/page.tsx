@@ -1,13 +1,17 @@
-import type { Metadata } from "next";
-import { notFound }      from "next/navigation";
-import Link              from "next/link";
-import { getCollection, getAllSlugs } from "@/content/collections";
-import { accentValues }  from "@/lib/tokens";
-import { ScrollReveal }  from "@/components/ui/ScrollReveal";
-import { Eyebrow }       from "@/components/ui/Eyebrow";
-import { Divider }       from "@/components/ui/Divider";
-import { Button }        from "@/components/ui/Button";
-import { NishawImage }   from "@/components/ui/NishawImage";
+import type { Metadata } from 'next';
+import { notFound }      from 'next/navigation';
+import Link              from 'next/link';
+import { getCollection, getAllSlugs } from '@/content/collections';
+import { accentValues }  from '@/lib/tokens';
+import { ScrollReveal }  from '@/components/ui/ScrollReveal';
+import { Eyebrow }       from '@/components/ui/Eyebrow';
+import { Divider }       from '@/components/ui/Divider';
+import { Button }        from '@/components/ui/Button';
+import { NishawImage }   from '@/components/ui/NishawImage';
+
+function toSlug(s: string): string {
+  return s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
 
 /* ── Static generation ───────────────────────────────────────────────────── */
 export function generateStaticParams() {
@@ -39,79 +43,33 @@ export async function generateMetadata(
 }
 
 /* ── Item card component ─────────────────────────────────────────────────── */
-function ItemCard({
-  name,
-  description,
-  glyph,
-  accentColor,
-  index,
-}: {
+function ItemCard({ name, description, glyph, accentColor, index, collectionSlug }: {
   name: string;
   description: string;
   glyph: string;
   accentColor: string;
   index: number;
+  collectionSlug: string;
 }) {
   return (
     <ScrollReveal delay={index * 80}>
-      <article
-        className="card"
-        style={{
-          padding:  "28px 24px",
-          height:   "100%",
-          display:  "flex",
-          flexDirection: "column",
-          gap:      16,
-        }}
-      >
-        {/* Glyph circle */}
-        <div
-          aria-hidden="true"
-          style={{
-            width:          52,
-            height:         52,
-            borderRadius:   "50%",
-            border:         `1.5px solid ${accentColor}`,
-            display:        "flex",
-            alignItems:     "center",
-            justifyContent: "center",
-            flexShrink:     0,
-            background:     `${accentColor}0d`,
-          }}
-        >
-          <span
-            style={{
-              fontFamily: "var(--font-heading)",
-              fontSize:   20,
-              color:      accentColor,
-              lineHeight: 1,
-            }}
-          >
-            {glyph}
-          </span>
-        </div>
-
-        {/* Content */}
-        <div style={{ flex: 1 }}>
-          <h3
-            style={{
-              fontFamily:  "var(--font-heading)",
-              fontSize:    "var(--text-h4)",
-              lineHeight:  1.2,
-              marginBottom: 8,
-              color:       "var(--color-ink)",
-            }}
-          >
+      <article className='card' style={{ padding: 0, height: '100%', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
+        {/* 1:1 product image */}
+        <NishawImage
+          src={`/images/collections/items/${collectionSlug}/${toSlug(name)}.jpg`}
+          alt={`${name} - included in ${collectionSlug.replace(/-/g,' ')} gift by Nishaw`}
+          aspect='1:1'
+          caption={name}
+          style={{ borderRadius: 0, border: 'none' }}
+        />
+        {/* Text content */}
+        <div style={{ padding: '20px 20px 18px', flex: 1, display: 'flex', flexDirection: 'column', gap: 8 }}>
+          {/* Small accent line */}
+          <div style={{ width: 24, height: 2, background: accentColor, borderRadius: 1 }} aria-hidden />
+          <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: 'var(--text-h4)', lineHeight: 1.2, marginBottom: 4, color: 'var(--color-ink)' }}>
             {name}
           </h3>
-          <p
-            style={{
-              fontFamily: "var(--font-body)",
-              fontSize:   "var(--text-body-sm)",
-              color:      "var(--color-ink-soft)",
-              lineHeight: 1.72,
-            }}
-          >
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--text-body-sm)', color: 'var(--color-ink-soft)', lineHeight: 1.72 }}>
             {description}
           </p>
         </div>
@@ -224,14 +182,7 @@ export default async function CollectionSlugPage(
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(offerCatalogLd) }} />
 
       {/* ── COLOURED HEADER BAND ─── */}
-      <div
-        style={{
-          background:   `${accentColor}0c`,   /* 5% tint of accent over paper */
-          borderBottom: `1px solid ${accentColor}33`,
-          paddingTop:   "clamp(100px, 14vw, 140px)",
-          paddingBottom:"clamp(56px, 8vw, 80px)",
-        }}
-      >
+      <div style={{ background: `${accentColor}0c`, borderBottom: `1px solid ${accentColor}33`, paddingTop: 'clamp(100px, 14vw, 140px)', paddingBottom: 'clamp(56px, 8vw, 80px)' }}>
         <div className="container">
           {/* Breadcrumb */}
           <nav aria-label="Breadcrumb" style={{ marginBottom: 32 }}>
@@ -256,72 +207,78 @@ export default async function CollectionSlugPage(
             </ol>
           </nav>
 
-          {/* Eyebrow, display name */}
-          <ScrollReveal>
-            <Eyebrow style={{ marginBottom: 16, color: accentColor }}>{col.displayName}</Eyebrow>
-          </ScrollReveal>
+          {/* Two-column layout: text left, image right */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0,1fr) minmax(0,420px)', gap: 'clamp(32px,5vw,64px)', alignItems: 'center' }}>
+            {/* Left: text content (all existing content: eyebrow, H1, promise, CTAs) */}
+            <div>
+              {/* Eyebrow, display name */}
+              <ScrollReveal>
+                <Eyebrow style={{ marginBottom: 16, color: accentColor }}>{col.displayName}</Eyebrow>
+              </ScrollReveal>
 
-          {/* H1, SEO title */}
-          <ScrollReveal delay={80}>
-            <h1
-              style={{
-                fontFamily:    "var(--font-heading)",
-                fontSize:      "var(--text-h1)",
-                fontWeight:    400,
-                letterSpacing: "-0.025em",
-                lineHeight:    1.08,
-                marginBottom:  20,
-                maxWidth:      720,
-              }}
-            >
-              {col.seoH1}
-            </h1>
-          </ScrollReveal>
+              {/* H1, SEO title */}
+              <ScrollReveal delay={80}>
+                <h1
+                  style={{
+                    fontFamily:    "var(--font-heading)",
+                    fontSize:      "var(--text-h1)",
+                    fontWeight:    400,
+                    letterSpacing: "-0.025em",
+                    lineHeight:    1.08,
+                    marginBottom:  20,
+                    maxWidth:      720,
+                  }}
+                >
+                  {col.seoH1}
+                </h1>
+              </ScrollReveal>
 
-          {/* Promise line, italic lead */}
-          <ScrollReveal delay={160}>
-            <p
-              style={{
-                fontFamily: "var(--font-heading)",
-                fontStyle:  "italic",
-                fontWeight: 300,
-                fontSize:   "var(--text-h3)",
-                color:      accentColor,
-                marginBottom: 32,
-                maxWidth:   640,
-                lineHeight: 1.3,
-              }}
-            >
-              {col.promiseLine}
-            </p>
-          </ScrollReveal>
+              {/* Promise line, italic lead */}
+              <ScrollReveal delay={160}>
+                <p
+                  style={{
+                    fontFamily: "var(--font-heading)",
+                    fontStyle:  "italic",
+                    fontWeight: 300,
+                    fontSize:   "var(--text-h3)",
+                    color:      accentColor,
+                    marginBottom: 32,
+                    maxWidth:   640,
+                    lineHeight: 1.3,
+                  }}
+                >
+                  {col.promiseLine}
+                </p>
+              </ScrollReveal>
 
-          {/* CTA in header */}
-          <ScrollReveal delay={220}>
-            <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-              <Link
-                href={`/contact?occasion=${col.slug}`}
-                className="btn btn-gold"
-                style={{ background: accentColor, borderColor: accentColor }}
-              >
-                Request this Collection
-              </Link>
-              <Button href="/contact" variant="ghost">
-                Talk to us first →
-              </Button>
+              {/* CTA in header */}
+              <ScrollReveal delay={220}>
+                <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
+                  <Link
+                    href={`/contact?occasion=${col.slug}`}
+                    className="btn btn-gold"
+                    style={{ background: accentColor, borderColor: accentColor }}
+                  >
+                    Request this Collection
+                  </Link>
+                  <Button href="/contact" variant="ghost">
+                    Talk to us first →
+                  </Button>
+                </div>
+              </ScrollReveal>
             </div>
-          </ScrollReveal>
-        </div>
-      </div>
 
-      {/* ── COLLECTION HERO PHOTO ─── */}
-      <div className="container" style={{ paddingTop: "clamp(32px, 5vw, 56px)", paddingBottom: 0 }}>
-        <NishawImage
-          src={`/images/collections/${col.slug}.jpg`}
-          alt={`${col.seoH1} - Nishaw corporate gifts`}
-          aspect="16:9"
-          caption={col.displayName}
-        />
+            {/* Right: hero image */}
+            <ScrollReveal delay={200}>
+              <NishawImage
+                src={`/images/collections/${col.slug}-hero.jpg`}
+                alt={`${col.seoH1} - premium corporate gifting by Nishaw`}
+                aspect='3:2'
+                caption={col.displayName}
+              />
+            </ScrollReveal>
+          </div>
+        </div>
       </div>
 
       {/* ── WHAT'S INSIDE ─── */}
@@ -349,7 +306,7 @@ export default async function CollectionSlugPage(
           <div
             style={{
               display:             "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))",
               gap:                 16,
             }}
           >
@@ -361,6 +318,7 @@ export default async function CollectionSlugPage(
                 glyph={item.glyph}
                 accentColor={accentColor}
                 index={i}
+                collectionSlug={col.slug}
               />
             ))}
           </div>
@@ -451,6 +409,27 @@ export default async function CollectionSlugPage(
             <ScrollReveal delay={210}>
               <StatBlock label="Lead time"        value={col.leadTime}        accentColor={accentColor} />
             </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ── INSIDE THE GIFT STRIP ─── */}
+      <section style={{ background: 'var(--color-paper)', padding: 'clamp(32px,5vw,56px) 0' }}>
+        <div className='container'>
+          <ScrollReveal>
+            <Eyebrow style={{ marginBottom: 20 }}>Inside a {col.displayName} gift</Eyebrow>
+          </ScrollReveal>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12 }}>
+            {[1,2,3].map((n) => (
+              <ScrollReveal key={n} delay={n * 80}>
+                <NishawImage
+                  src={`/images/collections/${col.slug}-detail-${n}.jpg`}
+                  alt={`Detail ${n} from a ${col.displayName} gift by Nishaw, showing ${n === 1 ? 'the gift presentation' : n === 2 ? 'a personalised element' : 'the artisan craftsmanship'}`}
+                  aspect='3:2'
+                  caption={`Detail ${n}`}
+                />
+              </ScrollReveal>
+            ))}
           </div>
         </div>
       </section>

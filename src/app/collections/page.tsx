@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { collections } from "@/content/collections";
 import { accentValues } from "@/lib/tokens";
@@ -6,6 +6,7 @@ import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Eyebrow }      from "@/components/ui/Eyebrow";
 import { Divider }      from "@/components/ui/Divider";
 import { Button }       from "@/components/ui/Button";
+import { NishawImage }  from '@/components/ui/NishawImage';
 
 export const metadata: Metadata = {
   title: "The Collections, Nine Ways to Be Remembered",
@@ -133,96 +134,54 @@ export default function CollectionsPage() {
                     aria-label={`${col.displayName}, ${col.seoH1}`}
                   >
                     <article
-                      className="card-accent card-hover"
+                      className="card-hover"
                       style={{
-                        borderTopColor: accentColor,
-                        padding:        "32px 28px 26px",
-                        height:         "100%",
-                        display:        "flex",
-                        flexDirection:  "column",
-                        gap:            12,
+                        borderRadius:    'var(--radius-card)',
+                        border:         '1px solid var(--color-gold-soft)',
+                        overflow:       'hidden',
+                        height:         '100%',
+                        display:        'flex',
+                        flexDirection:  'column',
+                        background:     'var(--color-paper)',
+                        boxShadow:      'var(--shadow-card)',
+                        transition:     'transform 200ms cubic-bezier(0.22,1,0.36,1), box-shadow 200ms cubic-bezier(0.22,1,0.36,1)',
+                        cursor:         'pointer',
                       }}
                     >
-                      {/* Accent pill */}
-                      <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                        <span
-                          aria-hidden="true"
-                          style={{
-                            width:     7, height:     7,
-                            borderRadius: "50%",
-                            background:   accentColor,
-                            flexShrink:   0,
-                          }}
-                        />
-                        <span
-                          style={{
-                            fontFamily:    "var(--font-body)",
-                            fontSize:      "var(--text-eyebrow)",
-                            letterSpacing: "0.16em",
-                            textTransform: "uppercase",
-                            color:         accentColor,
-                          }}
-                        >
-                          {col.displayName}
-                        </span>
-                      </div>
+                      {/* 4:5 image slot on top */}
+                      <NishawImage
+                        src={`/images/collections/${col.slug}.jpg`}
+                        alt={`${col.displayName} corporate gifts by Nishaw`}
+                        aspect="4:5"
+                        caption={col.displayName}
+                        style={{ borderRadius: 0, border: 'none' }}
+                      />
 
-                      {/* SEO headline */}
-                      <h2
-                        style={{
-                          fontFamily: "var(--font-heading)",
-                          fontSize:   "var(--text-h4)",
-                          fontWeight: 400,
-                          color:      "var(--color-ink)",
-                          lineHeight: 1.2,
-                          margin:     0,
-                        }}
-                      >
-                        {col.seoH1}
-                      </h2>
+                      {/* Bottom text area */}
+                      <div style={{ padding: '20px 20px 18px', display: 'flex', flexDirection: 'column', flex: 1, gap: 8 }}>
+                        {/* Accent pill: dot + name */}
+                        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                          <span aria-hidden style={{ width: 7, height: 7, borderRadius: '50%', background: accentColor, flexShrink: 0 }} />
+                          <span style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--text-eyebrow)', letterSpacing: '0.16em', textTransform: 'uppercase', color: accentColor }}>
+                            {col.displayName}
+                          </span>
+                        </div>
 
-                      {/* Promise line */}
-                      <p
-                        style={{
-                          fontFamily: "var(--font-heading)",
-                          fontStyle:  "italic",
-                          fontWeight: 300,
-                          fontSize:   "var(--text-body-lg)",
-                          color:      "var(--color-ink-soft)",
-                          lineHeight: 1.4,
-                          flex:       1,
-                          margin:     0,
-                        }}
-                      >
-                        {col.promiseLine}
-                      </p>
+                        {/* SEO H2 */}
+                        <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: 'var(--text-h4)', fontWeight: 400, color: 'var(--color-ink)', lineHeight: 1.2, margin: 0 }}>
+                          {col.seoH1}
+                        </h2>
 
-                      {/* Budget hint */}
-                      <div
-                        style={{
-                          display:    "flex",
-                          alignItems: "center",
-                          justifyContent: "space-between",
-                          marginTop:  4,
-                          paddingTop: 12,
-                          borderTop:  "1px solid var(--color-ink-faint)",
-                        }}
-                      >
-                        <span
-                          style={{
-                            fontFamily: "var(--font-body)",
-                            fontSize:   "var(--text-body-sm)",
-                            color:      "var(--color-ink-soft)",
-                          }}
-                        >
-                          {col.budgetBand}
-                        </span>
-                        <span
-                          style={{ color: accentColor, fontSize: 13 }}
-                          aria-hidden="true"
-                        >
-                          →
-                        </span>
+                        {/* Promise */}
+                        <p style={{ fontFamily: 'var(--font-heading)', fontStyle: 'italic', fontWeight: 300, fontSize: 'var(--text-body)', color: 'var(--color-ink-soft)', lineHeight: 1.4, flex: 1, margin: 0 }}>
+                          {col.promiseLine}
+                        </p>
+
+                        {/* Budget + arrow */}
+                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: 12, borderTop: '1px solid var(--color-ink-faint)', marginTop: 4 }}>
+                          <span style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--text-body-sm)', color: 'var(--color-ink-soft)' }}>{col.budgetBand}</span>
+                          <span style={{ color: accentColor, fontSize: 13 }} aria-hidden>→</span>
+                        </div>
                       </div>
                     </article>
                   </Link>
