@@ -5,6 +5,7 @@ import { Eyebrow }      from "@/components/ui/Eyebrow";
 import { Divider }      from "@/components/ui/Divider";
 import { Button }       from "@/components/ui/Button";
 import { accentValues } from "@/lib/tokens";
+import { NishawImage }  from "@/components/ui/NishawImage";
 
 export const metadata: Metadata = {
   title: "Corporate Gifting Case Studies",
@@ -28,8 +29,9 @@ const breadcrumbLd = {
 /* ── Case studies data ─────────────────────────────────────────────────── */
 const studies = [
   {
-    accent:     "pine"       as const,
-    eyebrow:    "Fintech Startup · Employee Onboarding · 500 kits",
+    accent:      "pine"       as const,
+    imageSlug:   "fintech-welcome-kits",
+    eyebrow:     "Fintech Startup · Employee Onboarding · 500 kits",
     heading:    "The welcome that travelled to 18 cities",
     brief:
       "A Series C fintech was expanding pan-India. Five hundred new hires across 18 cities in a single month. The founders wanted a gift that said something real about the kind of company they were building, before any new hire had attended a single meeting.",
@@ -41,8 +43,9 @@ const studies = [
     testimonial: null,
   },
   {
-    accent:     "terracotta" as const,
-    eyebrow:    "Private Bank · Diwali · 200 VIP client hampers",
+    accent:      "terracotta" as const,
+    imageSlug:   "private-bank-diwali",
+    eyebrow:     "Private Bank · Diwali · 200 VIP client hampers",
     heading:    "The Diwali that nobody put away",
     brief:
       "A private bank wanted to send Diwali hampers to 200 of their most senior clients. The brief was clear: nothing that looks like it came from a supplier's catalogue. Their clients had received corporate gifts from institutions across the world.",
@@ -54,8 +57,9 @@ const studies = [
     testimonial: "This is the only Diwali gift this year I did not pass along to someone else.",
   },
   {
-    accent:     "plum"       as const,
-    eyebrow:    "SaaS Company · Farewell · 12 custom memory books",
+    accent:      "plum"       as const,
+    imageSlug:   "saas-memory-books",
+    eyebrow:     "SaaS Company · Farewell · 12 custom memory books",
     heading:    "The goodbye that made twelve people cry",
     brief:
       "A Series A SaaS company's founding team of twelve was dissolving after an acquisition. The founders wanted to give each person something that acknowledged what they had built together. The instruction was simple: make them feel seen.",
@@ -67,8 +71,9 @@ const studies = [
     testimonial: "I didn't expect to feel so seen.",
   },
   {
-    accent:     "sapphire"   as const,
-    eyebrow:    "VC Fund · Executive Gifting · 10 LP thank-yous",
+    accent:      "sapphire"   as const,
+    imageSlug:   "vc-fund-lp-gifts",
+    eyebrow:     "VC Fund · Executive Gifting · 10 LP thank-yous",
     heading:    "The fund anniversary gifts that got a reply",
     brief:
       "A mid-sized VC fund was closing its latest fund and wanted to thank ten limited partners. The recipients were senior leaders at family offices and institutional investors who had seen every variety of corporate gift.",
@@ -80,8 +85,9 @@ const studies = [
     testimonial: "The level of consideration was apparent from the moment it arrived.",
   },
   {
-    accent:     "gold"       as const,
-    eyebrow:    "FMCG Company · Quarterly Recognition · 45 recipients",
+    accent:      "gold"       as const,
+    imageSlug:   "fmcg-recognition",
+    eyebrow:     "FMCG Company · Quarterly Recognition · 45 recipients",
     heading:    "When recognition attendance went from 60% to 100%",
     brief:
       "A large FMCG company wanted to redesign their quarterly recognition programme. Previously, winners received a printed certificate and a branded mug. The CHRO felt this was not commensurate with the achievements being recognised.",
@@ -116,6 +122,19 @@ function StoryCard({
           overflow:      "hidden",
         }}
       >
+        {/* Case study photo */}
+        <NishawImage
+          src={`/images/register/${study.imageSlug}.jpg`}
+          alt={`${study.heading} - Nishaw corporate gifting case study`}
+          aspect="16:9"
+          caption="Case study photo"
+          style={{
+            borderRadius: 0,
+            border:       "none",
+            borderBottom: "1px solid var(--color-gold-soft)",
+          }}
+        />
+
         {/* Header */}
         <div style={{ padding: "32px 32px 0" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 14 }}>

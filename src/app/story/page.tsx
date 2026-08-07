@@ -5,6 +5,7 @@ import { ScrollReveal }  from "@/components/ui/ScrollReveal";
 import { Eyebrow }       from "@/components/ui/Eyebrow";
 import { Divider }       from "@/components/ui/Divider";
 import { Button }        from "@/components/ui/Button";
+import { NishawImage }   from "@/components/ui/NishawImage";
 
 export const metadata: Metadata = {
   title: "About Nishaw: Our Story, Philosophy & the People Behind the Gifts",
@@ -154,10 +155,17 @@ export default function StoryPage() {
 
             {/* Side column: name meaning */}
             <ScrollReveal delay={150}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 24, position: "sticky", top: 96 }}>
+                {/* Founders portrait */}
+                <NishawImage
+                  src="/images/story/founders.jpg"
+                  alt="The founders of Nishaw seated at a workshop table, surrounded by gift materials, laughing"
+                  aspect="4:5"
+                  caption="The founders"
+                />
+
               <div
                 style={{
-                  position:     "sticky",
-                  top:          96,
                   border:       "1px dashed var(--color-gold-soft)",
                   borderRadius: "var(--radius-card)",
                   padding:      "32px 28px",
@@ -179,6 +187,7 @@ export default function StoryPage() {
                   We named our company after that trace, because the best gifts do exactly this: they leave a mark. Not always visible. Always felt.
                 </p>
               </div>
+              </div>{/* end outer flex col */}
             </ScrollReveal>
           </div>
         </div>

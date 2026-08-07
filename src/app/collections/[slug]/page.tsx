@@ -7,6 +7,7 @@ import { ScrollReveal }  from "@/components/ui/ScrollReveal";
 import { Eyebrow }       from "@/components/ui/Eyebrow";
 import { Divider }       from "@/components/ui/Divider";
 import { Button }        from "@/components/ui/Button";
+import { NishawImage }   from "@/components/ui/NishawImage";
 
 /* ── Static generation ───────────────────────────────────────────────────── */
 export function generateStaticParams() {
@@ -311,6 +312,16 @@ export default async function CollectionSlugPage(
             </div>
           </ScrollReveal>
         </div>
+      </div>
+
+      {/* ── COLLECTION HERO PHOTO ─── */}
+      <div className="container" style={{ paddingTop: "clamp(32px, 5vw, 56px)", paddingBottom: 0 }}>
+        <NishawImage
+          src={`/images/collections/${col.slug}.jpg`}
+          alt={`${col.seoH1} - Nishaw corporate gifts`}
+          aspect="16:9"
+          caption={col.displayName}
+        />
       </div>
 
       {/* ── WHAT'S INSIDE ─── */}

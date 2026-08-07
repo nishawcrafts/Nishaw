@@ -4,6 +4,7 @@ import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Eyebrow }      from "@/components/ui/Eyebrow";
 import { Divider }      from "@/components/ui/Divider";
 import { Button }       from "@/components/ui/Button";
+import { NishawImage }  from "@/components/ui/NishawImage";
 
 export const metadata: Metadata = {
   title: "Bespoke Corporate Gifting & Custom Hampers",
@@ -409,30 +410,13 @@ export default function BespokePage() {
             </h2>
           </ScrollReveal>
           <ScrollReveal delay={80}>
-            <div
-              style={{
-                borderRadius: "var(--radius-card)",
-                overflow:     "hidden",
-                border:       "1px solid var(--color-gold-soft)",
-                lineHeight:   0,
-              }}
-            >
-              <img
-                src="/images/bespoke-gallery.jpg"
-                alt="A Nishaw bespoke gifting flat-lay: an open premium gift box revealing a leather journal with gold-foil initials and a brass pen, surrounded by tissue paper, a wax seal stamp, and artisan snacks on cream linen"
-                loading="lazy"
-                width="900"
-                height="560"
-                style={{
-                  width:      "100%",
-                  height:     "auto",
-                  maxHeight:  560,
-                  objectFit:  "cover",
-                  objectPosition: "center",
-                  display:    "block",
-                }}
-              />
-            </div>
+            <NishawImage
+              src="/images/bespoke/gallery-hero.jpg"
+              alt="A Nishaw bespoke gifting flat-lay: an open premium gift box revealing a leather journal with gold-foil initials and a brass pen, surrounded by tissue paper, a wax seal stamp, and artisan snacks on cream linen"
+              aspect="3:2"
+              caption="Bespoke gallery"
+              style={{ maxHeight: 560 }}
+            />
           </ScrollReveal>
         </div>
       </section>
