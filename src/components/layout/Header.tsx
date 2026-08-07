@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Link from "next/link";
 import { useEffect, useRef, useState, useCallback } from "react";
@@ -106,18 +106,20 @@ export function Header() {
           <Link
             href="/"
             aria-label="Nishaw, home"
-            style={{ display: "flex", alignItems: "baseline", gap: 2 }}
+            style={{ display: "flex", alignItems: "center" }}
           >
-            <span
-              className="script"
+            <img
+              src="/nishaw-logo.svg"
+              alt="Nishaw"
+              height={52}
+              width={52}
               style={{
-                fontSize: "clamp(2rem, 4vw, 2.75rem)",
-                color: "var(--color-gold)",
-                letterSpacing: "0.01em",
+                height: 52,
+                width:  52,
+                objectFit: "contain",
+                display: "block",
               }}
-            >
-              Nishaw
-            </span>
+            />
           </Link>
 
           {/* Desktop nav */}
@@ -208,9 +210,18 @@ export function Header() {
 
         {/* Wordmark in drawer */}
         <Link href="/" onClick={closeDrawer} style={{ display: "block", marginBottom: 32 }}>
-          <span className="script" style={{ fontSize: "2rem", color: "var(--color-gold)" }}>
-            Nishaw
-          </span>
+          <img
+            src="/nishaw-logo.svg"
+            alt="Nishaw"
+            height={72}
+            width={72}
+            style={{
+              height: 72,
+              width:  72,
+              objectFit: "contain",
+              display: "block",
+            }}
+          />
         </Link>
 
         {/* Nav links */}

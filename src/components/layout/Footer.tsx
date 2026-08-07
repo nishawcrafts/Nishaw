@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import { collections, navLinks, contact } from "@/lib/tokens";
 import { NewsletterForm } from "./NewsletterForm";
 
@@ -65,30 +65,22 @@ export function Footer() {
           {/* Top row, wordmark + tagline */}
           <div
             style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: 8,
               marginBottom: 48,
             }}
           >
-            <span
-              className="script"
+            <img
+              src="/nishaw-logo.svg"
+              alt="Nishaw: Say more than thank you."
+              loading="lazy"
+              width={140}
+              height={140}
               style={{
-                fontSize: "clamp(2.5rem, 5vw, 3.5rem)",
-                color: "var(--color-gold)",
+                height: 140,
+                width:  140,
+                objectFit: "contain",
+                display: "block",
               }}
-            >
-              Nishaw
-            </span>
-            <p
-              className="tagline"
-              style={{
-                fontSize: "var(--text-h4)",
-                color: "var(--color-ink-soft)",
-              }}
-            >
-              Say more than thank you.
-            </p>
+            />
           </div>
 
           {/* Hairline */}
