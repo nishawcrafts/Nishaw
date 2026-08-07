@@ -4,16 +4,24 @@
  */
 
 export const colors = {
-  paper:       "#F7F1E1",
-  paperDeep:   "#EFE7D2",
-  ink:         "#3A2E28",
-  inkSoft:     "#6B5A4E",
-  terracotta:  "#A8443A",
-  pine:        "#2F5D50",
-  sapphire:    "#2E4A6B",
-  plum:        "#6E3B52",
-  gold:        "#B8934A",
-  goldSoft:    "#D9C48F",
+  /* Backgrounds */
+  paper:          "#FBF7EF",   /* ivory */
+  paperDeep:      "#F1E9DA",   /* ivory-deep */
+  /* Text */
+  ink:            "#221E1B",
+  inkSoft:        "#5C544B",
+  /* Emerald - signature brand */
+  emerald:        "#14432E",
+  emeraldDeep:    "#0E3222",
+  emeraldBright:  "#2E6B4F",
+  /* Champagne - hairlines & marks only */
+  gold:           "#C6A15B",
+  goldSoft:       "#E4D3A8",
+  /* Collection accents (muted) */
+  terracotta:     "#A8443A",
+  pine:           "#2F5D50",
+  sapphire:       "#2E4A6B",
+  plum:           "#6E3B52",
 } as const;
 
 export const fonts = {

@@ -102,15 +102,15 @@ export function MobileActionBar() {
           justifyContent: "center",
           gap: 8,
           padding: "16px 12px",
-          background: "var(--color-gold)",
+          background: "var(--color-emerald)",
           fontFamily: "var(--font-body)",
           fontSize: "var(--text-body-sm)",
-          color: "var(--color-paper)",
+          color: "#FBF7EF",
           letterSpacing: "0.04em",
           transition: "background var(--dur-link) var(--ease-out)",
         }}
-        onMouseEnter={(e) => (e.currentTarget.style.background = "#a07a3a")}
-        onMouseLeave={(e) => (e.currentTarget.style.background = "var(--color-gold)")}
+        onMouseEnter={(e) => (e.currentTarget.style.background = "var(--color-emerald-bright)")}
+        onMouseLeave={(e) => (e.currentTarget.style.background = "var(--color-emerald)")}
       >
         <WhatsAppIcon />
         WhatsApp

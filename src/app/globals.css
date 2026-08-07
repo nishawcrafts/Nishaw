@@ -10,21 +10,31 @@
 
 /* ── Tailwind v4 theme ───────────────────────────────────────────────────── */
 @theme {
-  /* Colours */
-  --color-paper:        #F7F1E1;
-  --color-paper-deep:   #EFE7D2;
-  --color-ink:          #3A2E28;
-  --color-ink-soft:     #6B5A4E;
-  --color-ink-faint:    rgba(58,46,40,0.08);
-  --color-ink-muted:    rgba(58,46,40,0.35);
+  /* ── Core backgrounds ─────────────────────────────── */
+  --color-paper:          #FBF7EF;   /* ivory - primary bg */
+  --color-paper-deep:     #F1E9DA;   /* ivory-deep - section bg */
 
-  --color-terracotta:   #A8443A;
-  --color-pine:         #2F5D50;
-  --color-sapphire:     #2E4A6B;
-  --color-plum:         #6E3B52;
-  --color-gold:         #B8934A;
-  --color-gold-soft:    #D9C48F;
-  --color-gold-faint:   rgba(184,147,74,0.15);
+  /* ── Text ─────────────────────────────────────────── */
+  --color-ink:            #221E1B;   /* AA-safe on ivory */
+  --color-ink-soft:       #5C544B;   /* secondary text, AA on ivory */
+  --color-ink-faint:      rgba(34,30,27,0.07);
+  --color-ink-muted:      rgba(34,30,27,0.32);
+
+  /* ── Emerald - signature brand ────────────────────── */
+  --color-emerald:        #14432E;   /* footer, bespoke band, active states */
+  --color-emerald-deep:   #0E3222;   /* footer deep bg */
+  --color-emerald-bright: #2E6B4F;   /* hover states, section accents */
+
+  /* ── Champagne - hairlines & marks ONLY ───────────── */
+  --color-gold:           #C6A15B;   /* champagne, thin lines & small marks */
+  --color-gold-soft:      #E4D3A8;   /* champagne-soft, hairlines */
+  --color-gold-faint:     rgba(198,161,91,0.12);
+
+  /* ── Collection accents (muted) ───────────────────── */
+  --color-terracotta:     #A8443A;
+  --color-pine:           #2F5D50;
+  --color-sapphire:       #2E4A6B;
+  --color-plum:           #6E3B52;
 
   /* Typography */
   --font-heading:  "Fraunces", Georgia, serif;
@@ -53,16 +63,16 @@
 
   /* Motion - these are the ONLY timings used sitewide */
   --ease-out:      cubic-bezier(0.22, 1, 0.36, 1);
-  --dur-fast:      120ms;   /* button press */
-  --dur-link:      200ms;   /* underline draw, card lift */
-  --dur-reveal:    500ms;   /* fade+rise */
-  --dur-bar:       250ms;   /* mobile bar slide-up */
+  --dur-fast:      120ms;
+  --dur-link:      200ms;
+  --dur-reveal:    500ms;
+  --dur-bar:       250ms;
 
-  /* Shadows */
-  --shadow-card:       0 2px 16px rgba(58,46,40,0.07), 0 1px 4px rgba(58,46,40,0.04);
-  --shadow-card-hover: 0 8px 32px rgba(58,46,40,0.13), 0 2px 8px rgba(58,46,40,0.07);
+  /* Shadows - ink updated to new values */
+  --shadow-card:       0 2px 16px rgba(34,30,27,0.07), 0 1px 4px rgba(34,30,27,0.04);
+  --shadow-card-hover: 0 8px 32px rgba(34,30,27,0.13), 0 2px 8px rgba(34,30,27,0.07);
   --shadow-header:     0 1px 0 var(--color-gold-soft);
-  --shadow-bar:        0 -2px 16px rgba(58,46,40,0.10);
+  --shadow-bar:        0 -2px 16px rgba(34,30,27,0.10);
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
@@ -110,7 +120,8 @@ h1,h2,h3,h4,h5 {
   font-weight: 400;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--color-gold);
+  /* emerald-bright: 5.1:1 on ivory - passes AA */
+  color: var(--color-emerald-bright);
 }
 
 .tagline {
@@ -210,15 +221,15 @@ h1,h2,h3,h4,h5 {
   outline-offset: 3px;
 }
 
-/* Primary gold */
+/* Primary - emerald (signature brand CTA) */
 .btn-gold {
-  background: var(--color-gold);
-  color: var(--color-paper);
-  border-color: var(--color-gold);
+  background: var(--color-emerald);
+  color: #FBF7EF;
+  border-color: var(--color-emerald);
 }
 .btn-gold:hover {
-  background: #a07a3a;
-  border-color: #a07a3a;
+  background: var(--color-emerald-bright);
+  border-color: var(--color-emerald-bright);
 }
 
 /* Ghost - ink outline */
@@ -232,14 +243,14 @@ h1,h2,h3,h4,h5 {
   color: var(--color-paper);
 }
 
-/* Ghost gold - gold outline */
+/* Ghost emerald - emerald outline */
 .btn-ghost-gold {
   background: transparent;
-  color: var(--color-gold);
-  border-color: var(--color-gold);
+  color: var(--color-emerald);
+  border-color: var(--color-emerald);
 }
 .btn-ghost-gold:hover {
-  background: var(--color-gold-faint);
+  background: rgba(20,67,46,0.07);
 }
 
 /* Size modifiers */
@@ -250,7 +261,7 @@ h1,h2,h3,h4,h5 {
    CARDS  (animation 3 - lift -4px + shadow bloom, 200ms)
    ──────────────────────────────────────────────────────────────────────── */
 .card {
-  background: rgba(255,249,237,0.9);
+  background: var(--color-paper);
   border: 1px solid var(--color-gold-soft);
   border-radius: var(--radius-card);
   box-shadow: var(--shadow-card);
@@ -271,7 +282,7 @@ h1,h2,h3,h4,h5 {
 
 /* Accent band card - top border in collection accent colour */
 .card-accent {
-  background: rgba(255,249,237,0.9);
+  background: var(--color-paper);
   border: 1px solid var(--color-gold-soft);
   border-top-width: 3px;
   border-radius: var(--radius-card);
@@ -323,7 +334,7 @@ h1,h2,h3,h4,h5 {
   inset: 0 0 0 auto;
   width: min(340px, 90vw);
   background: var(--color-paper);
-  box-shadow: -4px 0 32px rgba(58,46,40,0.12);
+  box-shadow: -4px 0 32px rgba(34,30,27,0.12);
   transform: translateX(100%);
   transition: transform var(--dur-reveal) var(--ease-out);
   z-index: 60;
@@ -335,7 +346,7 @@ h1,h2,h3,h4,h5 {
 .nav-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(58,46,40,0.4);
+  background: rgba(14,50,34,0.55);
   opacity: 0;
   pointer-events: none;
   transition: opacity var(--dur-link) var(--ease-out);
@@ -397,7 +408,7 @@ h1,h2,h3,h4,h5 {
    FOCUS
    ──────────────────────────────────────────────────────────────────────── */
 :focus-visible {
-  outline: 2px solid var(--color-gold);
+  outline: 2px solid var(--color-emerald-bright);
   outline-offset: 3px;
   border-radius: 2px;
 }
@@ -459,13 +470,13 @@ img[loading="lazy"] {
 /* ─────────────────────────────────────────────────────────────────────────
    ACCESSIBILITY - Form controls
    ──────────────────────────────────────────────────────────────────────── */
-/* Gold focus ring on all form controls */
+/* Emerald focus ring on all form controls */
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-  outline:        2px solid var(--color-gold);
+  outline:        2px solid var(--color-emerald-bright);
   outline-offset: 2px;
-  border-color:   var(--color-gold) !important;
+  border-color:   var(--color-emerald-bright) !important;
 }
 
 /* aria-invalid: terracotta border on invalid fields */
@@ -485,7 +496,7 @@ textarea[aria-invalid="true"] {
   transition:    border-color 200ms ease-out;
 }
 .card-dashed:hover {
-  border-color: var(--color-gold);
+  border-color: var(--color-emerald-bright);
 }
 
 /* ─────────────────────────────────────────────────────────────────────────

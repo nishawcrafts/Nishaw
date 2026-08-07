@@ -54,10 +54,10 @@ export function Footer() {
       <footer
         role="contentinfo"
         style={{
-          background: "var(--color-paper-deep)",
-          borderTop: "1px solid var(--color-gold-soft)",
-          paddingTop: "clamp(56px, 8vw, 96px)",
-          paddingBottom: "clamp(32px, 5vw, 56px)",
+          background:   "var(--color-emerald)",
+          borderTop:    "1px solid var(--color-emerald-bright)",
+          paddingTop:   "clamp(56px, 8vw, 96px)",
+          paddingBottom:"clamp(32px, 5vw, 56px)",
         }}
       >
         <div className="container">
@@ -84,7 +84,7 @@ export function Footer() {
           </div>
 
           {/* Hairline */}
-          <hr className="hairline" style={{ marginBottom: 48 }} />
+          <hr style={{ border: "none", borderTop: "1px solid rgba(251,247,239,0.18)", marginBottom: 48 }} />
 
           {/* Three-column grid */}
           <div
@@ -97,7 +97,7 @@ export function Footer() {
           >
             {/* Collections */}
             <div>
-              <p className="eyebrow" style={{ marginBottom: 20 }}>
+              <p className="eyebrow" style={{ marginBottom: 20, color: "var(--color-gold)" }}>
                 The Collections
               </p>
               <ul
@@ -116,7 +116,7 @@ export function Footer() {
                       style={{
                         fontFamily: "var(--font-body)",
                         fontSize: "var(--text-body-sm)",
-                        color: "var(--color-ink-soft)",
+                        color: "rgba(251,247,239,0.72)",
                       }}
                     >
                       {name}
@@ -128,7 +128,7 @@ export function Footer() {
 
             {/* Company */}
             <div>
-              <p className="eyebrow" style={{ marginBottom: 20 }}>
+              <p className="eyebrow" style={{ marginBottom: 20, color: "var(--color-gold)" }}>
                 Company
               </p>
               <ul
@@ -147,7 +147,7 @@ export function Footer() {
                       style={{
                         fontFamily: "var(--font-body)",
                         fontSize: "var(--text-body-sm)",
-                        color: "var(--color-ink-soft)",
+                        color: "rgba(251,247,239,0.72)",
                       }}
                     >
                       {label}
@@ -159,7 +159,7 @@ export function Footer() {
 
             {/* Contact */}
             <div>
-              <p className="eyebrow" style={{ marginBottom: 20 }}>
+              <p className="eyebrow" style={{ marginBottom: 20, color: "var(--color-gold)" }}>
                 Get in Touch
               </p>
               <div
@@ -169,20 +169,20 @@ export function Footer() {
                   gap: 14,
                   fontFamily: "var(--font-body)",
                   fontSize: "var(--text-body-sm)",
-                  color: "var(--color-ink-soft)",
+                  color: "rgba(251,247,239,0.72)",
                 }}
               >
                 <a
                   href={`mailto:${contact.email}`}
                   className="link-draw"
-                  style={{ color: "var(--color-ink-soft)" }}
+                  style={{ color: "rgba(251,247,239,0.72)" }}
                 >
                   {contact.email}
                 </a>
                 <a
                   href={`tel:${contact.phone.replace(/\s/g, "")}`}
                   className="link-draw"
-                  style={{ color: "var(--color-ink-soft)" }}
+                  style={{ color: "rgba(251,247,239,0.72)" }}
                 >
                   {contact.phone}
                 </a>
@@ -209,8 +209,9 @@ export function Footer() {
                 style={{
                   marginTop: 36,
                   padding: "20px",
-                  border: "1px dashed var(--color-gold-soft)",
+                  border: "1px solid rgba(251,247,239,0.18)",
                   borderRadius: "var(--radius-card)",
+                  background: "rgba(14,50,34,0.5)",
                 }}
               >
                 <p
@@ -218,7 +219,7 @@ export function Footer() {
                     fontFamily: "var(--font-heading)",
                     fontStyle: "italic",
                     fontSize: "var(--text-body-sm)",
-                    color: "var(--color-ink)",
+                    color: "rgba(251,247,239,0.95)",
                     marginBottom: 4,
                   }}
                 >
@@ -228,7 +229,7 @@ export function Footer() {
                   style={{
                     fontFamily: "var(--font-body)",
                     fontSize: "0.8125rem",
-                    color: "var(--color-ink-soft)",
+                    color: "rgba(251,247,239,0.6)",
                     marginBottom: 14,
                     lineHeight: 1.5,
                   }}
@@ -241,7 +242,7 @@ export function Footer() {
           </div>
 
           {/* Bottom bar */}
-          <hr className="hairline" style={{ marginBottom: 24 }} />
+          <hr style={{ border: "none", borderTop: "1px solid rgba(251,247,239,0.14)", marginBottom: 24 }} />
           <div
             style={{
               display: "flex",
@@ -255,16 +256,16 @@ export function Footer() {
               style={{
                 fontFamily: "var(--font-body)",
                 fontSize: "0.8125rem",
-                color: "var(--color-ink-soft)",
+                color: "rgba(251,247,239,0.5)",
               }}
             >
-              © {new Date().getFullYear()} Nishaw. All rights reserved.
+              &copy; {new Date().getFullYear()} Nishaw. All rights reserved.
             </p>
             <p
               className="tagline"
               style={{
                 fontSize: "var(--text-body-sm)",
-                color: "var(--color-ink-soft)",
+                color: "rgba(251,247,239,0.5)",
               }}
             >
               Reserved for the remarkable.
