@@ -81,25 +81,22 @@ const gallerySlots = [
   { slug: 'unboxing-03',alt: 'A recipient reading a handwritten Nishaw enclosure note, gift box open in the foreground, warm office light' },
 ];
 
-const testimonials = [
+/* ── Testimonials: add verified quotes here before going live ────────────
+   While unverified, the section renders a single brand statement instead.
+   To activate: set SHOW_TESTIMONIALS = true and fill the array below.
+   ──────────────────────────────────────────────────────────────────────── */
+const SHOW_TESTIMONIALS = false;
+
+const testimonials: Array<{ quote: string; name: string; title: string; accent: 'pine' | 'sapphire' | 'plum' }> = [
+  /* Replace with verified client quotes — keep name/title/accent */
+  /* Example:
   {
-    quote:   "Nishaw handled our entire 2024 Diwali gifting across 14 cities. Zero issues, and packaging our clients actually commented on.",
+    quote:   "...",
     name:    "Priya S.",
-    title:   "Chief People Officer",
-    accent:  "pine" as const,
+    title:   "Chief People Officer, [Company]",
+    accent:  "pine",
   },
-  {
-    quote:   "We have been sending client gifts for eight years. Nishaw is the first team that understood the brief without being asked twice.",
-    name:    "Rahul M.",
-    title:   "Head of Client Relations, Private Bank",
-    accent:  "sapphire" as const,
-  },
-  {
-    quote:   "The quality exceeded what we expected at this price point. And the account management made our team's lives much easier.",
-    name:    "Shreya T.",
-    title:   "Chief of Staff, VC-backed SaaS Company",
-    accent:  "plum" as const,
-  },
+  */
 ];
 
 export default function Home() {
@@ -319,98 +316,53 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 14. NEW: TESTIMONIALS */}
-      <section className="section-py" style={{ backgroundColor: 'var(--color-paper-deep)', borderTop: '1px solid var(--color-gold-soft)' }}>
-        <div className="container">
-          <ScrollReveal>
-            <Eyebrow style={{ marginBottom: 40 }}>Heard from clients</Eyebrow>
-          </ScrollReveal>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20 }}>
-            {testimonials.map((t, i) => (
-              <ScrollReveal key={i} delay={i * 80}>
-                <figure
-                  className="card"
-                  style={{ padding: '32px 28px', height: '100%', display: 'flex', flexDirection: 'column', gap: 20, margin: 0 }}
-                >
-                  {/* Large opening quote */}
-                  <span
-                    aria-hidden
-                    style={{
-                      fontFamily: 'var(--font-heading)',
-                      fontSize:   '3rem',
-                      color:      `var(--color-${t.accent})`,
-                      opacity:    0.3,
-                      lineHeight: 1,
-                      fontWeight: 300,
-                    }}
-                  >
-                    &ldquo;
-                  </span>
-
-                  {/* Quote */}
-                  <blockquote style={{ flex: 1, margin: 0 }}>
-                    <p style={{
-                      fontFamily: 'var(--font-heading)',
-                      fontStyle:  'italic',
-                      fontWeight: 300,
-                      fontSize:   'var(--text-h4)',
-                      color:      'var(--color-ink)',
-                      lineHeight: 1.55,
-                    }}>
-                      {t.quote}
-                    </p>
-                  </blockquote>
-
-                  {/* Attribution */}
-                  <figcaption style={{ display: 'flex', alignItems: 'center', gap: 12, paddingTop: 16, borderTop: '1px solid var(--color-ink-faint)' }}>
-                    {/* Logo slot */}
-                    <div
-                      aria-label="Company logo placeholder"
-                      style={{
-                        width:          40,
-                        height:         40,
-                        flexShrink:     0,
-                        borderRadius:   'var(--radius-sm)',
-                        border:         '1px solid var(--color-gold-soft)',
-                        background:     'var(--color-paper)',
-                        display:        'flex',
-                        alignItems:     'center',
-                        justifyContent: 'center',
-                      }}
-                    >
-                      <span aria-hidden style={{ color: 'var(--color-gold)', opacity: 0.4, fontSize: 11 }}>♦</span>
-                    </div>
-
-                    {/* Name + title */}
-                    <div>
-                      <span style={{
-                        display:     'block',
-                        fontFamily:  'var(--font-body)',
-                        fontSize:    'var(--text-body-sm)',
-                        fontWeight:  600,
-                        color:       'var(--color-ink)',
-                        letterSpacing: '0.02em',
-                      }}>
-                        {/* Typographic dash before name, rendered as separate element */}
-                        <span aria-hidden style={{ color: `var(--color-${t.accent})`, marginRight: 6, fontWeight: 300 }}>&mdash;</span>{t.name}
-                      </span>
-                      <span style={{
-                        display:    'block',
-                        fontFamily: 'var(--font-body)',
-                        fontSize:   'var(--text-body-sm)',
-                        color:      'var(--color-ink-soft)',
-                        marginTop:  2,
-                      }}>
-                        {t.title}
-                      </span>
-                    </div>
-                  </figcaption>
-                </figure>
-              </ScrollReveal>
-            ))}
+      {/* 14. BRAND QUOTE (replaces testimonials until verified quotes available) */}
+      {SHOW_TESTIMONIALS && testimonials.length > 0 ? (
+        <section className="section-py" style={{ backgroundColor: 'var(--color-paper-deep)', borderTop: '1px solid var(--color-gold-soft)' }}>
+          <div className="container">
+            <ScrollReveal>
+              <Eyebrow style={{ marginBottom: 40 }}>Heard from clients</Eyebrow>
+            </ScrollReveal>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20 }}>
+              {testimonials.map((t, i) => (
+                <ScrollReveal key={i} delay={i * 80}>
+                  <figure className="card" style={{ padding: '32px 28px', height: '100%', display: 'flex', flexDirection: 'column', gap: 20, margin: 0 }}>
+                    <span aria-hidden style={{ fontFamily: 'var(--font-heading)', fontSize: '3rem', color: `var(--color-${t.accent})`, opacity: 0.3, lineHeight: 1, fontWeight: 300 }}>&ldquo;</span>
+                    <blockquote style={{ flex: 1, margin: 0 }}>
+                      <p style={{ fontFamily: 'var(--font-heading)', fontStyle: 'italic', fontWeight: 300, fontSize: 'var(--text-h4)', color: 'var(--color-ink)', lineHeight: 1.55 }}>{t.quote}</p>
+                    </blockquote>
+                    <figcaption style={{ display: 'flex', alignItems: 'center', gap: 12, paddingTop: 16, borderTop: '1px solid var(--color-gold-soft)' }}>
+                      <div aria-label="Company logo placeholder" style={{ width: 40, height: 40, flexShrink: 0, borderRadius: 'var(--radius-sm)', border: '1px solid var(--color-gold-soft)', background: 'var(--color-paper)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <span aria-hidden style={{ color: 'var(--color-gold)', opacity: 0.4, fontSize: 11 }}>♦</span>
+                      </div>
+                      <div>
+                        <span style={{ display: 'block', fontFamily: 'var(--font-body)', fontSize: 'var(--text-body-sm)', fontWeight: 600, color: 'var(--color-ink)', letterSpacing: '0.02em' }}>
+                          <span aria-hidden style={{ color: `var(--color-${t.accent})`, marginRight: 6, fontWeight: 300 }}>&mdash;</span>{t.name}
+                        </span>
+                        <span style={{ display: 'block', fontFamily: 'var(--font-body)', fontSize: 'var(--text-body-sm)', color: 'var(--color-ink-soft)', marginTop: 2 }}>{t.title}</span>
+                      </div>
+                    </figcaption>
+                  </figure>
+                </ScrollReveal>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ) : (
+        <section style={{ backgroundColor: 'var(--color-emerald)', borderTop: '1px solid var(--color-emerald-bright)', padding: 'clamp(56px, 8vw, 80px) 0', textAlign: 'center' }}>
+          <div className="container" style={{ maxWidth: 640, margin: '0 auto' }}>
+            <ScrollReveal>
+              <span aria-hidden style={{ display: 'block', color: 'var(--color-gold)', fontSize: 'var(--text-h3)', opacity: 0.4, marginBottom: 16 }}>♦</span>
+              <blockquote>
+                <p style={{ fontFamily: 'var(--font-heading)', fontStyle: 'italic', fontWeight: 300, fontSize: 'clamp(1.4rem, 3vw, 2rem)', color: '#FBF7EF', lineHeight: 1.5, margin: '0 0 32px' }}>
+                  The gift reflects the giver. Let&rsquo;s make sure yours reflects well.
+                </p>
+              </blockquote>
+              <Link href="/contact" className="btn btn-gold btn-lg">Talk to a Gifting Concierge</Link>
+            </ScrollReveal>
+          </div>
+        </section>
+      )}
 
       {/* 15. NEW: GALLERY STRIP */}
       <section style={{ backgroundColor: 'var(--color-paper-deep)', padding: 'clamp(56px, 8vw, 80px) 0', borderTop: '1px solid var(--color-gold-soft)' }}>
@@ -441,7 +393,10 @@ export default function Home() {
         <div className="container">
           <ScrollReveal>
             <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: 'var(--text-h2)', fontWeight: 300, marginBottom: '24px' }}>Ready to elevate your corporate gifting?</h2>
-            <Button href="/contact">Get in touch</Button>
+            <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
+              <Button href="/contact" variant="gold" size="lg">Talk to a Gifting Concierge</Button>
+              <Button href="/collections" variant="ghost" size="lg">Browse Collections</Button>
+            </div>
           </ScrollReveal>
         </div>
       </section>

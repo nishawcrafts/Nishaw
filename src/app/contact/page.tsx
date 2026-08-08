@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Suspense }       from "react";
 import Link               from "next/link";
 import { ContactForm }    from "@/components/contact/ContactForm";
 import { ScrollReveal }   from "@/components/ui/ScrollReveal";
@@ -110,16 +109,8 @@ export default function ContactPage() {
               alignItems:          "start",
             }}
           >
-            {/* ── FORM (Suspense required for useSearchParams) ── */}
-            <Suspense
-              fallback={
-                <div style={{ padding: "40px 0", fontFamily: "var(--font-body)", color: "var(--color-ink-soft)" }}>
-                  Loading form...
-                </div>
-              }
-            >
-              <ContactForm />
-            </Suspense>
+            {/* Form — renders immediately; useSearchParams is isolated in the shell */}
+            <ContactForm />
 
             {/* ── SIDEBAR ── */}
             <aside>

@@ -313,7 +313,7 @@ export default function GiftRegisterPage() {
               Tell us the occasion. We will build something worth remembering.
             </p>
             <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-              <Link href="/contact" className="btn btn-gold btn-lg">Start a Conversation</Link>
+              <Link href="/contact" className="btn btn-gold btn-lg">Talk to a Gifting Concierge</Link>
               <Button href="/collections" variant="ghost" size="lg">Browse Collections</Button>
             </div>
           </ScrollReveal>

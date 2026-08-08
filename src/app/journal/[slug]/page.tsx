@@ -350,7 +350,7 @@ export default async function JournalSlugPage({
                     Ready to put this into practice? Start a conversation and we will take it from there.
                   </p>
                   <Link href="/contact" className="btn btn-gold" style={{ display: "block", textAlign: "center", width: "100%" }}>
-                    Start a Conversation
+                    Talk to a Gifting Concierge
                   </Link>
                 </div>
               </ScrollReveal>

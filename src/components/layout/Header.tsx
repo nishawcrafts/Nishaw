@@ -259,7 +259,7 @@ export function Header() {
               className="btn btn-gold btn-sm"
               style={{ marginLeft: 4, whiteSpace: "nowrap" }}
             >
-              Start a Conversation
+              Talk to a Gifting Concierge
             </Link>
           </nav>
 
@@ -412,7 +412,7 @@ export function Header() {
           className="btn btn-gold"
           style={{ marginTop: 28, width: "100%", justifyContent: "center" }}
         >
-          Start a Conversation
+          Talk to a Gifting Concierge
         </Link>
 
         {/* Contact mini */}

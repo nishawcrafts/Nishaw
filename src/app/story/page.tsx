@@ -341,7 +341,7 @@ export default function StoryPage() {
             </span>
 
             <div style={{ marginTop: 48, display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-              <Link href="/contact" className="btn btn-gold">Start a Conversation</Link>
+              <Link href="/contact" className="btn btn-gold">Talk to a Gifting Concierge</Link>
               <Button href="/collections" variant="ghost">Explore our work</Button>
             </div>
           </ScrollReveal>

@@ -451,7 +451,7 @@ export default function GalleryPage() {
             </p>
             <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
               <Button href="/contact" variant="gold" size="lg">
-                Start a Conversation
+                Talk to a Gifting Concierge
               </Button>
               <Button href="/collections" variant="ghost" size="lg">
                 Browse Collections

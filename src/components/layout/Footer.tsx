@@ -39,7 +39,7 @@ const companyLinks = [
   { label: "For Enterprises",  href: "/for-enterprises" },
   { label: "The Gift Register", href: "/gift-register" },
   { label: "The Art of Giving", href: "/journal" },
-  { label: "Start a Conversation", href: "/contact" },
+  { label: "Talk to a Gifting Concierge", href: "/contact" },
 ];
 
 export function Footer() {
