@@ -8,10 +8,10 @@
  * Features:
  *  - Fixed aspect-ratio wrapper (no layout shift)
  *  - Rounded 14 px corners, 1 px champagne-soft border
- *  - loading="lazy", blur-up fade-in on load
+ *  - loading="lazy" / "eager" with fetchpriority on LCP images
+ *  - blur-up fade-in on load (suppressed under prefers-reduced-motion)
  *  - REQUIRED descriptive `alt` prop (enforced by TypeScript)
- *  - Elegant empty-state when `src` is omitted or undefined:
- *      ivory-deep panel, centred champagne diamond, faint caption label
+ *  - Elegant empty-state when `src` is omitted or undefined
  *  - Aspect ratios: "1:1" | "4:5" | "3:2" | "16:9"
  */
 
@@ -39,8 +39,15 @@ interface NishawImageProps {
   objectFit?: "cover" | "contain";
   /** Object position. Default "center". */
   objectPosition?: string;
-  /** Eager-load the image (use for above-the-fold). Default false (lazy). */
+  /** Eager-load the image (use for above-the-fold / LCP). Default false (lazy). */
   eager?: boolean;
+  /**
+   * Responsive sizes hint passed to the browser.
+   * Helps pick the right resolution from a srcset.
+   * Example: "(max-width: 768px) 100vw, 50vw"
+   * Default: "100vw"
+   */
+  sizes?: string;
 }
 
 /* ── Aspect ratio map ─────────────────────────────────────────────────────── */
@@ -68,6 +75,7 @@ export function NishawImage({
   objectFit = "cover",
   objectPosition = "center",
   eager = false,
+  sizes = "100vw",
 }: NishawImageProps) {
   const [loaded, setLoaded] = useState(false);
 
@@ -138,12 +146,20 @@ export function NishawImage({
   /* ── Image with blur-up ─────────────────────────────────────────────────── */
   return (
     <div className={className} style={wrapperStyle}>
+      {/* Blur-up fade suppressed by .nishaw-img-nomotion under prefers-reduced-motion */}
+      <style dangerouslySetInnerHTML={{ __html:
+        `@media (prefers-reduced-motion: reduce) { .nishaw-img { opacity: 1 !important; transition: none !important; } }`
+      }} />
       <img
         src={src}
         alt={alt}
         loading={eager ? "eager" : "lazy"}
-        decoding="async"
+        decoding={eager ? "sync" : "async"}
+        // fetchPriority is a valid HTML attribute; React types may flag it — cast via spread
+        {...(eager ? { fetchPriority: "high" } : {})}
+        sizes={sizes}
         onLoad={() => setLoaded(true)}
+        className="nishaw-img"
         style={{
           position:       "absolute",
           inset:          0,

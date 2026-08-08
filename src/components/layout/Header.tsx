@@ -240,6 +240,8 @@ export function Header() {
               alt="Nishaw"
               height={52}
               width={52}
+              loading="eager"
+              fetchPriority="high"
               style={{ height: 52, width: 52, objectFit: "contain", display: "block" }}
             />
           </Link>

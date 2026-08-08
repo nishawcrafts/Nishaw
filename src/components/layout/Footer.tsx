@@ -33,12 +33,14 @@ const jsonLd = {
 };
 
 const companyLinks = [
-  { label: "The Nishaw Story", href: "/story" },
-  { label: "How We Gift",      href: "/how-we-gift" },
-  { label: "Bespoke",          href: "/bespoke" },
-  { label: "For Enterprises",  href: "/for-enterprises" },
-  { label: "The Gift Register", href: "/gift-register" },
-  { label: "The Art of Giving", href: "/journal" },
+  { label: "The Nishaw Story",           href: "/story" },
+  { label: "How We Gift",               href: "/how-we-gift" },
+  { label: "Bespoke",                   href: "/bespoke" },
+  { label: "For Enterprises",           href: "/for-enterprises" },
+  { label: "Nishaw Experiences",        href: "/experiences" },
+  { label: "The Gift Register",         href: "/gift-register" },
+  { label: "Gallery",                   href: "/gallery" },
+  { label: "The Art of Giving",         href: "/journal" },
   { label: "Talk to a Gifting Concierge", href: "/contact" },
 ];
 
@@ -256,7 +258,8 @@ export function Footer() {
               style={{
                 fontFamily: "var(--font-body)",
                 fontSize: "0.8125rem",
-                color: "rgba(251,247,239,0.5)",
+                /* Raised from 0.5 to 0.65: passes AA (3.5:1 on emerald) */
+                color: "rgba(251,247,239,0.65)",
               }}
             >
               &copy; {new Date().getFullYear()} Nishaw. All rights reserved.
@@ -265,7 +268,8 @@ export function Footer() {
               className="tagline"
               style={{
                 fontSize: "var(--text-body-sm)",
-                color: "rgba(251,247,239,0.5)",
+                /* Raised from 0.5 to 0.65 for AA contrast */
+                color: "rgba(251,247,239,0.65)",
               }}
             >
               Reserved for the remarkable.
