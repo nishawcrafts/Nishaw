@@ -79,6 +79,7 @@ export const navGroups = [
   {
     label: "Our Work",
     children: [
+      { label: "Experiences",   href: "/experiences" },
       { label: "Gift Register", href: "/gift-register" },
       { label: "Gallery",       href: "/gallery" },
     ],
@@ -98,6 +99,7 @@ export const navLinks = [
   { label: "The Collections",  href: "/collections" },
   { label: "Bespoke",          href: "/bespoke" },
   { label: "For Enterprises",  href: "/for-enterprises" },
+  { label: "Nishaw Experiences", href: "/experiences" },
   { label: "The Gift Register", href: "/gift-register" },
   { label: "Gallery",          href: "/gallery" },
   { label: "The Nishaw Story", href: "/story" },

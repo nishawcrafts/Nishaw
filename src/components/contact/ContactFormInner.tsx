@@ -30,6 +30,7 @@ const OCCASION_MAP: Record<string, string> = {
   "event-gifting":        "team",
   "bespoke-hampers":      "bespoke",
   "enterprise":           "other",
+  "experiences":          "team",   /* /experiences CTA */
 };
 
 const HEADCOUNTS = [

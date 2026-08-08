@@ -134,6 +134,208 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 2b. WHO ARE YOU GIFTING? — buyer-entry doors */}
+      <section className="section-py" style={{ backgroundColor: 'var(--color-paper)' }}>
+        <div className="container">
+          <ScrollReveal>
+            <div style={{ textAlign: 'center', marginBottom: 'clamp(40px, 6vw, 56px)' }}>
+              <Eyebrow style={{ marginBottom: 12 }}>Who are you gifting?</Eyebrow>
+              <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: 'var(--text-h2)', fontWeight: 300, letterSpacing: '-0.02em', maxWidth: 560, margin: '0 auto' }}>
+                Every relationship deserves its own language.
+              </h2>
+            </div>
+          </ScrollReveal>
+          <div
+            style={{
+              display:             'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+              gap:                 20,
+            }}
+          >
+            {/* Door 1 — Employee */}
+            <ScrollReveal delay={0}>
+              <Link
+                href="/collections/welcome-kits"
+                aria-label="Employee gifting: First Light, Standing Ovation, Warm Regards"
+                style={{ display: 'block', textDecoration: 'none', height: '100%' }}
+              >
+                <div
+                  className="buyer-door"
+                  style={{
+                    background:    'var(--color-paper-deep)',
+                    border:        '1px solid var(--color-gold-soft)',
+                    borderRadius:  'var(--radius-card)',
+                    borderTop:     '3px solid var(--color-pine)',
+                    padding:       'clamp(24px, 4vw, 36px) 28px',
+                    height:        '100%',
+                    display:       'flex',
+                    flexDirection: 'column',
+                    gap:           16,
+                    cursor:        'pointer',
+                  }}
+                >
+                  <span aria-hidden style={{ color: 'var(--color-pine)', fontSize: 22, lineHeight: 1 }}>♦</span>
+                  <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: 'var(--text-h4)', fontWeight: 400, margin: 0 }}>
+                    Employee
+                  </h3>
+                  <p style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--text-body-sm)', color: 'var(--color-ink-soft)', lineHeight: 1.65, margin: 0, flex: 1 }}>
+                    Onboarding kits, milestone recognition, farewell gifts. For the people who build your company every day.
+                  </p>
+                  <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 6 }}>
+                    {['First Light', 'Standing Ovation', 'Warm Regards'].map((name) => (
+                      <li key={name} style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--text-body-sm)', color: 'var(--color-ink-soft)' }}>
+                        <span aria-hidden style={{ color: 'var(--color-pine)', marginRight: 8, fontSize: 10 }}>◆</span>{name}
+                      </li>
+                    ))}
+                  </ul>
+                  <span style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--text-body-sm)', color: 'var(--color-pine)', fontWeight: 500 }}>
+                    Explore &rarr;
+                  </span>
+                </div>
+              </Link>
+            </ScrollReveal>
+
+            {/* Door 2 — Client & Partner */}
+            <ScrollReveal delay={60}>
+              <Link
+                href="/collections/client-vip-gifts"
+                aria-label="Client and Partner gifting: The Inner Circle, Season of Light"
+                style={{ display: 'block', textDecoration: 'none', height: '100%' }}
+              >
+                <div
+                  className="buyer-door"
+                  style={{
+                    background:    'var(--color-paper-deep)',
+                    border:        '1px solid var(--color-gold-soft)',
+                    borderRadius:  'var(--radius-card)',
+                    borderTop:     '3px solid var(--color-plum)',
+                    padding:       'clamp(24px, 4vw, 36px) 28px',
+                    height:        '100%',
+                    display:       'flex',
+                    flexDirection: 'column',
+                    gap:           16,
+                    cursor:        'pointer',
+                  }}
+                >
+                  <span aria-hidden style={{ color: 'var(--color-plum)', fontSize: 22, lineHeight: 1 }}>♦</span>
+                  <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: 'var(--text-h4)', fontWeight: 400, margin: 0 }}>
+                    Client &amp; Partner
+                  </h3>
+                  <p style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--text-body-sm)', color: 'var(--color-ink-soft)', lineHeight: 1.65, margin: 0, flex: 1 }}>
+                    Client appreciation, festive gifting, relationship-building. For the people you never want to lose.
+                  </p>
+                  <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 6 }}>
+                    {['The Inner Circle', 'Season of Light'].map((name) => (
+                      <li key={name} style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--text-body-sm)', color: 'var(--color-ink-soft)' }}>
+                        <span aria-hidden style={{ color: 'var(--color-plum)', marginRight: 8, fontSize: 10 }}>◆</span>{name}
+                      </li>
+                    ))}
+                  </ul>
+                  <span style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--text-body-sm)', color: 'var(--color-plum)', fontWeight: 500 }}>
+                    Explore &rarr;
+                  </span>
+                </div>
+              </Link>
+            </ScrollReveal>
+
+            {/* Door 3 — Executive & CXO */}
+            <ScrollReveal delay={120}>
+              <Link
+                href="/collections/executive-gifts"
+                aria-label="Executive and CXO gifting: The Corner Office, The Chairman curation"
+                style={{ display: 'block', textDecoration: 'none', height: '100%' }}
+              >
+                <div
+                  className="buyer-door"
+                  style={{
+                    background:    'var(--color-paper-deep)',
+                    border:        '1px solid var(--color-gold-soft)',
+                    borderRadius:  'var(--radius-card)',
+                    borderTop:     '3px solid var(--color-sapphire)',
+                    padding:       'clamp(24px, 4vw, 36px) 28px',
+                    height:        '100%',
+                    display:       'flex',
+                    flexDirection: 'column',
+                    gap:           16,
+                    cursor:        'pointer',
+                  }}
+                >
+                  <span aria-hidden style={{ color: 'var(--color-sapphire)', fontSize: 22, lineHeight: 1 }}>♦</span>
+                  <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: 'var(--text-h4)', fontWeight: 400, margin: 0 }}>
+                    Executive &amp; CXO
+                  </h3>
+                  <p style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--text-body-sm)', color: 'var(--color-ink-soft)', lineHeight: 1.65, margin: 0, flex: 1 }}>
+                    Bespoke curation for leaders whose desk has seen everything. Gifts with a boardroom pedigree.
+                  </p>
+                  <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 6 }}>
+                    {['The Corner Office', 'The Chairman'].map((name) => (
+                      <li key={name} style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--text-body-sm)', color: 'var(--color-ink-soft)' }}>
+                        <span aria-hidden style={{ color: 'var(--color-sapphire)', marginRight: 8, fontSize: 10 }}>◆</span>{name}
+                      </li>
+                    ))}
+                  </ul>
+                  <span style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--text-body-sm)', color: 'var(--color-sapphire)', fontWeight: 500 }}>
+                    Explore &rarr;
+                  </span>
+                </div>
+              </Link>
+            </ScrollReveal>
+
+            {/* Door 4 — Team & Event */}
+            <ScrollReveal delay={180}>
+              <Link
+                href="/collections/event-gifting"
+                aria-label="Team and Event gifting: Grand Gatherings, Nishaw Experiences"
+                style={{ display: 'block', textDecoration: 'none', height: '100%' }}
+              >
+                <div
+                  className="buyer-door"
+                  style={{
+                    background:    'var(--color-paper-deep)',
+                    border:        '1px solid var(--color-gold-soft)',
+                    borderRadius:  'var(--radius-card)',
+                    borderTop:     '3px solid var(--color-emerald)',
+                    padding:       'clamp(24px, 4vw, 36px) 28px',
+                    height:        '100%',
+                    display:       'flex',
+                    flexDirection: 'column',
+                    gap:           16,
+                    cursor:        'pointer',
+                  }}
+                >
+                  <span aria-hidden style={{ color: 'var(--color-emerald)', fontSize: 22, lineHeight: 1 }}>♦</span>
+                  <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: 'var(--text-h4)', fontWeight: 400, margin: 0 }}>
+                    Team &amp; Event
+                  </h3>
+                  <p style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--text-body-sm)', color: 'var(--color-ink-soft)', lineHeight: 1.65, margin: 0, flex: 1 }}>
+                    Conference gifting, team activations, workshop-in-a-box experiences. Hundreds of gifts, one impression.
+                  </p>
+                  <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 6 }}>
+                    {['Grand Gatherings', 'Nishaw Experiences'].map((name, i) => (
+                      <li key={name} style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--text-body-sm)', color: 'var(--color-ink-soft)' }}>
+                        <span aria-hidden style={{ color: 'var(--color-emerald)', marginRight: 8, fontSize: 10 }}>◆</span>
+                        {i === 1 ? <Link href="/experiences" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'var(--color-gold-soft)' }}>{name}</Link> : name}
+                      </li>
+                    ))}
+                  </ul>
+                  <span style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--text-body-sm)', color: 'var(--color-emerald)', fontWeight: 500 }}>
+                    Explore &rarr;
+                  </span>
+                </div>
+              </Link>
+            </ScrollReveal>
+          </div>
+
+          {/* hover lift for door cards */}
+          <style>{`
+            .buyer-door { transition: transform 200ms ease-out, box-shadow 200ms ease-out; }
+            .buyer-door:hover { transform: translateY(-3px); box-shadow: 0 8px 32px rgba(34,30,27,0.1); }
+          `}</style>
+        </div>
+      </section>
+
+      <Divider />
+
       {/* 3. COLLECTIONS GRID */}
       <section className="section-py" style={{ backgroundColor: 'var(--color-paper)' }}>
         <div className="container">
