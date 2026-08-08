@@ -465,11 +465,56 @@ export default async function CollectionSlugPage(
               </div>
             </ScrollReveal>
 
-            {/* Sidebar: related collections */}
+            {/* Sidebar: cross-links + related collections */}
             <ScrollReveal delay={120}>
-              <aside style={{ position: "sticky", top: 96 }}>
+              <aside style={{ position: 'sticky', top: 96 }}>
+
+                {/* ── Collection-specific cross-links ── */}
+                {col.crossLinks && col.crossLinks.length > 0 && (
+                  <div style={{ marginBottom: 32 }}>
+                    <Eyebrow style={{ marginBottom: 16 }}>You might also consider</Eyebrow>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
+                      {col.crossLinks.map((link) => (
+                        <Link
+                          key={link.href + link.label}
+                          href={link.href}
+                          className="link-draw"
+                          style={{
+                            fontFamily:   'var(--font-body)',
+                            fontSize:     'var(--text-body-sm)',
+                            color:        'var(--color-ink)',
+                            padding:      '12px 0',
+                            borderBottom: '1px solid var(--color-ink-faint)',
+                            display:      'block',
+                          }}
+                        >
+                          <span style={{ display: 'block', fontWeight: 500 }}>
+                            {link.label} &rarr;
+                          </span>
+                          {link.note && (
+                            <span
+                              style={{
+                                display:    'block',
+                                fontSize:   '0.78rem',
+                                color:      accentColor,
+                                marginTop:  3,
+                                fontStyle:  'italic',
+                                fontFamily: 'var(--font-heading)',
+                                fontWeight: 300,
+                              }}
+                            >
+                              {link.note}
+                            </span>
+                          )}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* ── Other collections ── */}
                 <Eyebrow style={{ marginBottom: 20 }}>Other collections</Eyebrow>
-                <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
                   {getAllSlugs()
                     .filter((s) => s !== slug)
                     .slice(0, 5)
@@ -481,12 +526,12 @@ export default async function CollectionSlugPage(
                           href={`/collections/${s}`}
                           className="link-draw"
                           style={{
-                            fontFamily:  "var(--font-body)",
-                            fontSize:    "var(--text-body-sm)",
-                            color:       "var(--color-ink-soft)",
-                            padding:     "11px 0",
-                            borderBottom:"1px solid var(--color-ink-faint)",
-                            display:     "block",
+                            fontFamily:  'var(--font-body)',
+                            fontSize:    'var(--text-body-sm)',
+                            color:       'var(--color-ink-soft)',
+                            padding:     '11px 0',
+                            borderBottom:'1px solid var(--color-ink-faint)',
+                            display:     'block',
                           }}
                         >
                           {related.displayName}
@@ -497,15 +542,15 @@ export default async function CollectionSlugPage(
                     href="/collections"
                     className="link-draw"
                     style={{
-                      fontFamily:    "var(--font-body)",
-                      fontSize:      "var(--text-body-sm)",
-                      color:         "var(--color-gold)",
+                      fontFamily:    'var(--font-body)',
+                      fontSize:      'var(--text-body-sm)',
+                      color:         'var(--color-gold)',
                       paddingTop:    12,
-                      letterSpacing: "0.04em",
-                      display:       "block",
+                      letterSpacing: '0.04em',
+                      display:       'block',
                     }}
                   >
-                    See all nine →
+                    See all nine &rarr;
                   </Link>
                 </div>
               </aside>

@@ -1,4 +1,4 @@
-﻿/* ─────────────────────────────────────────────────────────────────────────
+/* ─────────────────────────────────────────────────────────────────────────
    Nishaw, Collection Content
    Single source of truth for all 9 collections.
    Used by /collections index, /collections/[slug] dynamic pages,
@@ -41,6 +41,12 @@ export interface Collection {
   leadTime: string;
   /** ~300-word editorial SEO body in plain text (no markdown) */
   seoBody: string;
+  /**
+   * Optional contextual cross-links shown in the sidebar.
+   * Each entry: { label — the link text; href — the destination }
+   * Use these to surface related collections, Nishaw Experiences, or editorial pages.
+   */
+  crossLinks?: Array<{ label: string; href: string; note?: string }>;
 }
 
 /* ════════════════════════════════════════════════════════════════════════
@@ -82,6 +88,11 @@ export const collections: Collection[] = [
     personalisation: "Recipient name, designation, company logo, handwritten or printed note card",
     idealQuantity:   "10 – 500+ per batch",
     leadTime:        "7 – 10 working days from brief approval",
+    crossLinks: [
+      { label: "Pair it with a Welcome Book",        href: "/bespoke",        note: "The Nishaw Press" },
+      { label: "For team activations: Nishaw Experiences", href: "/experiences", note: "Workshop-in-a-box kits" },
+      { label: "Milestone gifts for the same team",  href: "/collections/milestone-gifts", note: "The Long Game" },
+    ],
     seoBody: `Employee welcome kits occupy a singular position in the corporate gifting calendar. The moment someone accepts an offer and walks through your door, physically or virtually, they are still making up their minds about you. The onboarding gift is one of the few chances a company has to leave a first impression before the work begins.
 
 At Nishaw, First Light kits are built around one question: what does it feel like to be new here? We speak to HR leaders and founders to understand the company's culture, its warmth, its ambition, the particular way it treats people, and then curate items that quietly communicate all of that. A supple leather journal with the new hire's initials. A brass pen that feels like it was made for a writer. Artisan snacks from producers who care about what they make. A handwritten note in our signature style, on cream paper.
@@ -127,6 +138,11 @@ Typical budgets begin at ₹2,000 per kit and scale with the brief. Lead times a
     personalisation: "Years of service, name, personal message, monogram on leather goods",
     idealQuantity:   "1 – 200 per order",
     leadTime:        "5 – 10 working days from brief approval",
+    crossLinks: [
+      { label: "For the send-off: Warm Regards",            href: "/collections/farewell-gifts",       note: "Farewell & retirement gifts" },
+      { label: "For senior recipients: The Corner Office",  href: "/collections/executive-gifts",      note: "Executive & CXO gifts" },
+      { label: "Recognition gifts for the same team",      href: "/collections/rewards-recognition",   note: "Standing Ovation" },
+    ],
     seoBody: `Work anniversary gifts and milestone recognition presents occupy a deeply personal place in the corporate gifting spectrum. When someone reaches three years, five years, or two decades at a company, the gift they receive, or don't receive, becomes part of the story they tell about that organisation for the rest of their career.
 
 The Long Game collection at Nishaw is designed for exactly this moment. We build each gift around the specific person: their tenure, their personality, what they've contributed, and what they would actually enjoy receiving. This is not a catalogue of standardised plaques or generic branded merchandise. It is a collection of beautifully made objects, each of which can be personalised to carry the weight of the occasion.
@@ -174,6 +190,11 @@ Budget bands begin at ₹3,500 and scale to ₹15,000 and beyond for senior or l
     personalisation: "Award name, recipient name, achievement date, personal citation message",
     idealQuantity:   "1 – 200 per quarter",
     leadTime:        "7 – 14 working days from brief approval",
+    crossLinks: [
+      { label: "For milestone tenure: The Long Game",       href: "/collections/milestone-gifts",      note: "Work anniversary gifts" },
+      { label: "For a bespoke award commission",            href: "/bespoke",                           note: "House of Bespoke" },
+      { label: "For teams: Nishaw Experiences",             href: "/experiences",                       note: "Workshop-in-a-box sessions" },
+    ],
     seoBody: `Employee recognition gifts occupy a category that most companies get entirely wrong. The standard approach, a plaque, a certificate, a voucher handed over in a team meeting, communicates effort, but rarely communicates weight. The gift says the company noticed. It doesn't always say the company understood.
 
 Standing Ovation is Nishaw's collection for rewards and recognition: designed for the moments when someone has done something genuinely exceptional and deserves a gift that reflects that. A hand-cut crystal trophy with a personalised message laser-engraved inside. A gold-nib fountain pen in a velvet-lined case. A fine-dining experience voucher delivered in a sealed golden envelope. A limited-edition art print with real gold foil, mounted and ready to frame.
@@ -219,6 +240,12 @@ Corporate recognition culture in India is maturing rapidly. Organisations that o
     personalisation: "Recipient name, company, monogram, personal note in our hand",
     idealQuantity:   "5 – 200 per occasion",
     leadTime:        "7 – 10 working days from brief approval",
+    crossLinks: [
+      { label: "Our Year — the annual client gift",         href: "/bespoke",                           note: "House of Bespoke" },
+      { label: "The Founder's Story — for the key account",href: "/bespoke",                           note: "Bespoke narrative gift" },
+      { label: "For senior client contacts: The Corner Office", href: "/collections/executive-gifts",  note: "Executive & CXO gifts" },
+      { label: "Festive gifting for the same list",        href: "/collections/festive-diwali-gifts",  note: "Season of Light" },
+    ],
     seoBody: `Client gifting in India has long operated on a logic of gesture: send something, satisfy the obligation, move on. The best companies understand that this approach, the branded diary, the festival hamper dispatched to a spreadsheet of contacts, does exactly nothing for a relationship. It satisfies a calendar. It doesn't say anything.
 
 The Inner Circle is Nishaw's collection for the clients who matter most: the ones whose business shapes your company's trajectory, whose referrals fill your pipeline, and whose continued trust is worth more than a thousand cold emails. These are not gifts for a distribution list. They are gifts for a person.
@@ -266,6 +293,11 @@ Budgets typically begin at ₹5,000 per gift. Lead times are 7–10 working days
     personalisation: "Company logo, recipient name, greeting card, custom outer box branding",
     idealQuantity:   "50 – 5,000+ per season",
     leadTime:        "10 – 14 working days; 3–4 weeks recommended for 500+ units",
+    crossLinks: [
+      { label: "Year-round client gifting: The Inner Circle", href: "/collections/client-vip-gifts",   note: "VIP client gifts" },
+      { label: "For employees at the same festival",        href: "/collections/welcome-kits",         note: "First Light" },
+      { label: "Premium bespoke festive hampers",           href: "/bespoke",                          note: "House of Bespoke" },
+    ],
     seoBody: `Diwali corporate gifting is one of the most consequential decisions an organisation makes each year. The gift arrives in a moment of cultural significance, it's seen by the recipient's family, discussed at the dinner table, and remembered for longer than most business interactions. Getting it right is an opportunity. Getting it wrong, or defaulting to something generic, is a missed one.
 
 Season of Light is Nishaw's Diwali and festive corporate gifting collection. It is built on the belief that festive gifts in India have the potential to be genuinely beautiful, and that most of them aren't. The branded tin of mixed biscuits. The shrink-wrapped dry fruit box with a company logo stuck on. The hamper assembled from a wholesale catalogue. None of these say 'we thought about you.' They say 'it was November.'
@@ -311,6 +343,11 @@ Budget bands begin at ₹1,500 per gift and scale to ₹8,000 for premium curati
     personalisation: "Monogram, bespoke inscription, custom design elements on leather and cufflinks",
     idealQuantity:   "1 – 50 per occasion",
     leadTime:        "10 – 15 working days; bespoke items may require additional time",
+    crossLinks: [
+      { label: "Our Year — the annual CXO gift",            href: "/bespoke",                           note: "House of Bespoke" },
+      { label: "The Founder's Story — for a key departure", href: "/bespoke",                           note: "Bespoke narrative gift" },
+      { label: "For VIP client contacts",                  href: "/collections/client-vip-gifts",       note: "The Inner Circle" },
+    ],
     seoBody: `CXO and executive gifting operates under different rules than other categories of corporate presents. The recipient has seen every version of the generic gift, the crystal trophy, the branded merchandise, the festival hamper. They have probably given many themselves. What moves a senior leader is not expense alone, but evidence of thought.
 
 The Corner Office is Nishaw's collection for gifts given at the highest rung of the corporate ladder: to board members, to founding partners, to CXOs and managing directors, to the people who have built what they have built over decades. These gifts do not announce themselves. They arrive quietly, in packaging that doesn't need to compete for attention, and they reveal their value gradually, in the quality of the leather, the weight of the crystal, the particular bottle of whisky that was chosen because someone paid attention.
@@ -356,6 +393,11 @@ Premium budget bands begin at ₹15,000 per gift. For fully bespoke commissions,
     personalisation: "Tenure dates, personal message, team signatures, illustrated memory book content",
     idealQuantity:   "1 – 50 per occasion",
     leadTime:        "7 – 12 working days; memory books require 10+ working days",
+    crossLinks: [
+      { label: "A Hundred Thank-Yous — team thank-you gift", href: "/bespoke",                         note: "Bespoke collective gift" },
+      { label: "For the retirement: Nishaw Experiences",    href: "/experiences",                      note: "Workshop-in-a-box farewell" },
+      { label: "For milestone gifts before the farewell",   href: "/collections/milestone-gifts",      note: "The Long Game" },
+    ],
     seoBody: `Farewell gifts and retirement presents are among the most emotionally charged categories in corporate gifting, and among the most commonly underinvested. The standard farewell: a card passed around for signatures, a cake in the break room, and a gift voucher chosen in haste. The recipient smiles. The moment passes. The gift is forgotten.
 
 Warm Regards is Nishaw's collection for the departures that deserve better. Retirements after decades of service. Resignations from people who built something significant. Thank-yous to collaborators, advisors, and mentors whose contributions don't fit neatly on a job description. These are the goodbyes that deserve a gift equal to the relationship.
@@ -401,6 +443,11 @@ For companies with structured offboarding, we offer a tiered farewell gifting pr
     personalisation: "Company logo, event branding, delegate name (select items), custom packaging",
     idealQuantity:   "100 – 10,000+ units",
     leadTime:        "14 – 21 working days; 4 weeks recommended for 1,000+ units",
+    crossLinks: [
+      { label: "Team-building experiences: Nishaw Experiences", href: "/experiences",                  note: "Workshop-in-a-box for teams" },
+      { label: "VIP delegate gifts: The Corner Office",       href: "/collections/executive-gifts",    note: "Executive & CXO gifts" },
+      { label: "Welcome kits for new hires post-event",      href: "/collections/welcome-kits",        note: "First Light" },
+    ],
     seoBody: `Event gifting and conference delegate gifts are, by volume, among the largest categories in corporate gifting in India. They are also among the most commonly commoditised. The standard delegate bag: a cheap branded tote with a water bottle, a thin notebook, and a pen from a bulk supplier. The message is clear, you're one of many, and this gift reflects that.
 
 Grand Gatherings is Nishaw's answer to that standard. It is built on the belief that bulk gifting is not incompatible with quality, and that a gift given to five hundred people can still feel like it was made for each of them.
@@ -448,6 +495,11 @@ Budget bands begin at ₹500 per unit for core conference kits and scale to ₹3
     personalisation: "Total, every element is designed around the recipient and brief",
     idealQuantity:   "1 – 1,000 (small-run bespoke production available)",
     leadTime:        "14 – 21 working days; complex commissions may require 4–6 weeks",
+    crossLinks: [
+      { label: "For large-volume bespoke: Grand Gatherings", href: "/collections/event-gifting",       note: "Event & conference gifting" },
+      { label: "For CXO and leadership gifts",              href: "/collections/executive-gifts",      note: "The Corner Office" },
+      { label: "For client relationships",                  href: "/collections/client-vip-gifts",     note: "The Inner Circle" },
+    ],
     seoBody: `Custom gift hampers, truly custom, not 'pick-from-a-list' custom, represent the highest expression of corporate gifting. They are gifts built from a conversation, not a catalogue. They require a different kind of brief, a different kind of maker, and a different kind of patience. They are also the ones that get remembered.
 
 House of Bespoke is Nishaw's fully custom gifting service. We design and produce gifts that do not exist until we make them for you. The outer packaging is conceived from scratch, a custom box, a wooden trunk, a linen envelope, a ceramic vessel, in whatever dimensions and materials serve the brief. The contents are handpicked item by item from producers we trust, chosen for the specific recipient. The note is written in your voice, on cotton paper, sealed with wax.
